@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_bookmarks"
+            android:icon="@drawable/bookmark"
+            android:title="Bookmarks" />
+        <item
+            android:id="@+id/nav_fileexplorer"
+            android:icon="@drawable/file_explorer"
+            android:title="File Manager" />
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/notifications_24"
+            android:title="Repository of the Day"
+            app:actionViewClass="android.widget.Switch" />
+        <item
+            android:id="@+id/nav_appdata"
+            android:icon="@drawable/delete"
+            android:title="Clear App Data" />
+    </group>
+    <item android:title="More Apps By Developer">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_wallistract"
+                    android:icon="@drawable/wallistract48"
+                    android:title="Wallistract-HD Wallpapers" />
+                <item
+                    android:id="@+id/nav_VDFb"
+                    android:icon="@drawable/fbvd48"
+                    android:title="Facebook Video Downloader" />
+                <item
+                    android:id="@+id/nav_VDFbPro"
+                    android:icon="@drawable/fbvd48"
+                    android:title="(Ads Free)Facebook Video Downloader Pro" />
+                <item
+                    android:id="@+id/nav_RJMS"
+                    android:icon="@drawable/rjms48"
+                    android:title="Raja Mantri Chor Sipahi" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Communicate">
+        <menu>
+            <group android:checkableBehavior="single">
+                <!-- <item
+                     android:id="@+id/nav_addFree"
+                     android:icon="@drawable/advertising"
+                     android:title="Buy Ad Free" />-->
+                <item
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/share24"
+                    android:title="Share this App" />
+                <item
+                    android:id="@+id/nav_Rate"
+                    android:icon="@drawable/favorite"
+                    android:title="Rate this App" />
+                <item
+                    android:id="@+id/nav_more"
+                    android:icon="@drawable/more"
+                    android:title="More Apps" />
+                <item
+                    android:id="@+id/nav_About"
+                    android:icon="@drawable/info"
+                    android:title="About" />
+                <item
+                    android:id="@+id/nav_PP"
+                    android:icon="@drawable/info"
+                    android:title="Privacy Policy" />
+            </group>
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,88 @@
+
+
+{
+	"User1":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"android-open-project",
+		"Description":"Collect and classify android open source projects",
+		"URL":"https://github.com/Trinea/android-open-project"
+	},
+	"User2":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"material",
+		"Description":"A library to bring fully animated Material Design components to pre-Lolipop Android",
+		"URL":"https://github.com/rey5137/material"
+	},
+	"User3":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"cheesesquare",
+		"Description":"Demos the new Android Design library.",
+		"URL":"https://github.com/chrisbanes/cheesesquare"
+	},
+	"User4":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"MaterialDesignLibrary",
+		"Description":"This is a library with components of Android L to you use in android 2.2",
+		"URL":"https://github.com/navasmdc/MaterialDesignLibrary"
+	},
+	"User5":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"Genius-Android",
+		"Description":"Android Material Design Theme UI and Tool Library. Support: 4.0.3~N",
+		"URL":"https://github.com/qiujuer/Genius-Android"
+	},
+	"User6":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"LollipopShowcase",
+		"Description":"A simple app to showcase Androids Material Design and some of the cool new cool stuff in Android Lollipop. RecyclerView, CardView, ActionBarDrawerToggle, DrawerLayout, Animations, Android Compat Design, Toolbar",
+		"URL":"https://github.com/mikepenz/LollipopShowcase"
+	},
+	"User7":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"Carbon",
+		"Description":"Material Design implementation for Android 2.3+. Shadows, ripples, vectors, fonts, animations, widgets, rounded corners and more.",
+		"URL":"https://github.com/ZieIony/Carbon"
+	},
+	"User8":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"android-historian",
+		"Description":"A demo of the Android Material Design Support libraries",
+		"URL":"https://github.com/mwolfson/android-historian"
+	},
+	"User9":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"android-design-support-lib-sample",
+		"Description":"Just Sample how to use the android design support lib",
+		"URL":"https://github.com/swissonid/android-design-support-lib-sample"
+	},
+	"User10":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"DesignSupportLibraryDemo",
+		"Description":"Android Design Support Library Demo",
+		"URL":"https://github.com/xuyisheng/DesignSupportLibraryDemo"
+	},
+	"User11":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"MaterialUp",
+		"Description":"MaterialUp Android App",
+		"URL":"https://github.com/jariz/MaterialUp"
+	},
+	"User12":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"Android-MaterialPreference",
+		"Description":"A simple backward-compatible implementation of a Material Design Preference aka settings item",
+		"URL":"https://github.com/jenzz/Android-MaterialPreference"
+	},
+	"User13":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"android-design-template",
+		"Description":"This is a State of the Art Android Material Design template. You can use this project as a template for upcoming App projects. Just clone the project, change package name and make all necessary customzations.",
+		"URL":"https://github.com/andreasschrade/android-design-template"
+	},
+	"User14":{
+		"Topic_Name":"Materials Design Examples",
+		"Name_Of_Repository":"Android-Material-Examples",
+		"Description":"[Deprecated] Little bites of Material Design",
+		"URL":"https://github.com/saulmm/Android-Material-Examples"
+	}
+}

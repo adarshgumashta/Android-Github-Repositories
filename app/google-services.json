@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "51545307345",
+    "firebase_url": "https://androidrepositorygithub.firebaseio.com",
+    "project_id": "androidrepositorygithub",
+    "storage_bucket": "androidrepositorygithub.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51545307345:android:28fc7ca2a76689f8",
+        "android_client_info": {
+          "package_name": "com.sample.androidgithubrepositories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51545307345-ochb12n3fn9sf62gks9un33fb7jl3oq6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sample.androidgithubrepositories",
+            "certificate_hash": "c61444a46490beabe0290a6d1e9c9d3ada6ffbcd"
+          }
+        },
+        {
+          "client_id": "51545307345-j9d7r5a9g4usb7e7hafbdlrl7td8pbld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPW0Hpj2ByP9heOZM16yEMrWEDtXrGEts"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51545307345-j9d7r5a9g4usb7e7hafbdlrl7td8pbld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

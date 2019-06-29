@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+android {
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword 'adirocks'
+            storeFile file('A:/Android/New_Android_Studio_Projects/CardViewWithRecycler/AGR.jks')
+            storePassword 'adirocks'
+        }
+    }
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.sample.androidgithubrepositories"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 15
+        versionName "3.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig  signingConfigs.config
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.thoughtbot:expandablerecyclerview:1.3'
+    implementation 'com.thoughtbot:expandablecheckrecyclerview:1.4'
+    implementation 'com.codemybrainsout.onboarding:onboarder:1.0.4'
+    implementation 'com.github.clans:fab:1.6.4'
+    implementation 'io.github.kobakei:ratethisapp:1.2.0'
+    implementation 'com.google.android.gms:play-services-ads:11.0.4'
+    implementation 'com.github.jd-alexander:LikeButton:0.2.3'
+    // Check for v11.4.2 or higher
+ //   implementation 'com.google.firebase:firebase-core:11.0.4'
+
+    // Add dependency
+   // implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
+}
+apply plugin: 'com.google.gms.google-services'

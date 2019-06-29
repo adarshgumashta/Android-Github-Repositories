@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Repositories for Android in Github</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_add_favourite">Add to Bookmarks</string>
+    <string name="action_play_next">Share</string>
+    <string name="backdrop_title">LOVE MUSIC</string>
+    <string name="backdrop_subtitle">This season top 20 albums</string>
+    <string name="title_activity_listitems">listitems</string>
+    <string name="title_activity_navigation">navigation</string>
+    <string name="banner_customListview">ca-app-pub-8861549201942078/5174601950</string>
+    <string name="banner_ExpandableListView">ca-app-pub-8861549201942078/3566485748</string>
+    <string name="banner_Bookmarks">ca-app-pub-8861549201942078/6365352551</string>
+    <string name="banner_OpenGithubLink">ca-app-pub-8861549201942078/3743058646</string>
+    <string name="banner_FileManager">ca-app-pub-8861549201942078/1480212606</string>
+    <string name="interstitial_full_screen">ca-app-pub-8861549201942078/7693433013</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>

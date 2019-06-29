@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?><!-- This DrawerLayout has two children at the root  -->
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/second_activity_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:layout_collapseMode="pin" />
+
+        <ListView
+            android:id="@+id/list_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbarlist"
+            />
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewCustomListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="false"
+            android:layout_gravity="start|bottom"
+            app:adSize="BANNER"
+            app:adUnitId="@string/banner_customListview">
+        </com.google.android.gms.ads.AdView>
+    </RelativeLayout>
+    <!-- The navigation drawer that comes from the left -->
+    <!-- Note that `android:layout_gravity` needs to be set to 'start' -->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nvView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white"
+        app:headerLayout="@layout/nav_header_navigation"
+        app:itemTextColor="@android:color/holo_blue_dark"
+        app:menu="@menu/activity_navigation_drawer" />
+</android.support.v4.widget.DrawerLayout>

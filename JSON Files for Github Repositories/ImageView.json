@@ -1,0 +1,543 @@
+"ImageView":
+	[
+		{
+			"View":
+			[
+				{
+					"Name_Of_Repository":"PhotoView",
+					"Description":"Implementation of ImageView for Android that supports zooming, by various touch gestures.",
+					"URL":"https://github.com/chrisbanes/PhotoView"					
+				},
+				{
+					"Name_Of_Repository":"svg-android",
+					"Description":"Support for scalable vector graphics in Android",
+					"URL":"https://github.com/pents90/svg-android"					
+				},
+				{
+					"Name_Of_Repository":"MovingImageView",
+					"Description":"Custom ImageView for moving image around the screen (Android)",
+					"URL":"https://github.com/AlbertGrobas/MovingImageView"					
+				},
+				{
+					"Name_Of_Repository":"CircleImageView",
+					"Description":"A circular ImageView for Android",
+					"URL":"https://github.com/hdodenhof/CircleImageView"					
+				},
+				{
+					"Name_Of_Repository":"CircularImageView",
+					"Description":"Custom view for circular images in Android while maintaining the best draw performance",
+					"URL":"https://github.com/Pkmmte/CircularImageView"					
+				},
+				{
+					"Name_Of_Repository":"CircularImageView",
+					"Description":"Create circular ImageView in Android in the simplest way possible.",
+					"URL":"https://github.com/lopspower/CircularImageView"					
+				},
+				{
+					"Name_Of_Repository":"SelectableRoundedImageView",
+					"Description":"Android ImageView that supports different radii on each corner",
+					"URL":"https://github.com/pungrue26/SelectableRoundedImageView"					
+				},
+				{
+					"Name_Of_Repository":"android-shape-imageview",
+					"Description":"Custom shaped android imageview components",
+					"URL":"https://github.com/siyamed/android-shape-imageview"					
+				},
+				{
+					"Name_Of_Repository":"AndroidScrollingImageView",
+					"Description":"An Android view for displaying repeated continuous side scrolling images. This can be used to create a parallax animation effect.",
+					"URL":"https://github.com/Q42/AndroidScrollingImageView"					
+				},
+				{
+					"Name_Of_Repository":"TouchImageView",
+					"Description":"Adds touch functionality to Android ImageView.",
+					"URL":"https://github.com/MikeOrtiz/TouchImageView"					
+				},
+				{
+					"Name_Of_Repository":"NineGridImageView",
+					"Description":"A custom widget for Android, which uesd for showing grid pictures",
+					"URL":"https://github.com/laobie/NineGridImageView"					
+				},
+				{
+					"Name_Of_Repository":"gesture-imageview",
+					"Description":"Implements pinch-zoom, rotate, pan as an ImageView for Android 2.1+",
+					"URL":"https://github.com/jasonpolites/gesture-imageview"					
+				},
+				{
+					"Name_Of_Repository":"KenBurnsView",
+					"Description":"Android ImageViews animated by Ken Burns Effect",
+					"URL":"https://github.com/flavioarfaria/KenBurnsView"					
+				},
+				{
+					"Name_Of_Repository":"AndroidImageSlider",
+					"Description":"An amazing and convenient Android image slider.",
+					"URL":"https://github.com/daimajia/AndroidImageSlider"					
+				},
+				{
+					"Name_Of_Repository":"android-gif-drawable",
+					"Description":"Views and Drawable for displaying animated GIFs on Android",
+					"URL":"https://github.com/koral--/android-gif-drawable"					
+				},
+				{
+					"Name_Of_Repository":"GifView",
+					"Description":"Library for playing gifs on Android",
+					"URL":"https://github.com/Cutta/GifView"					
+				},
+				{
+					"Name_Of_Repository":"GifImageView",
+					"Description":"Android ImageView that handles animated GIF images",
+					"URL":"https://github.com/felipecsl/GifImageView"					
+				},
+				{
+					"Name_Of_Repository":"TileView",
+					"Description":"TileView is a subclass of android.view.ViewGroup that asynchronously displays tile-based images, with pan and zoom functionality, and support for features like markers, hotspots, paths, multiple levels of detail, and arbitrary coordinate systems.",
+					"URL":"https://github.com/moagrius/TileView"					
+				},
+				{
+					"Name_Of_Repository":"SimpleTagImageView",
+					"Description":"ImageView with a tag on android",
+					"URL":"https://github.com/wujingchao/SimpleTagImageView"					
+				},
+				{
+					"Name_Of_Repository":"LoadingDrawable",
+					"Description":"Some beautiful android loading drawable, can be combined with any view as the LoadingView or the ProgressBar. Besides, some Drawable can customize the loading progress too.",
+					"URL":"https://github.com/dinuscxj/LoadingDrawable"					
+				},
+				{
+					"Name_Of_Repository":"DrawerArrowDrawable",
+					"Description":"Visual back-port of the rotating drawer-to-arrow drawable from Android L",
+					"URL":"https://github.com/ChrisRenke/DrawerArrowDrawable"					
+				},
+				{
+					"Name_Of_Repository":"FrescoImageViewer",
+					"Description":"Customizable Android full screen image viewer for Fresco library supporting 'pinch to zoom' and 'swipe to dismiss' gestures",
+					"URL":"https://github.com/stfalcon-studio/FrescoImageViewer"					
+				},
+				{
+					"Name_Of_Repository":"android-drag-square",
+					"Description":"edit personal information which enables users to drag and rank image order",
+					"URL":"https://github.com/xmuSistone/android-drag-square"					
+				},
+				{
+					"Name_Of_Repository":"AndroidTouchGallery",
+					"Description":"Android widget for gallery, using viewpager. Allow pinch zoom and drag for images by url",
+					"URL":"https://github.com/Dreddik/AndroidTouchGallery"					
+				},
+				{
+					"Name_Of_Repository":"AndroidDrawableFactory",
+					"Description":"A Java Application to create appropriate Drawable resources for your Android application",
+					"URL":"https://github.com/tizionario/AndroidDrawableFactory"					
+				},
+				{
+					"Name_Of_Repository":"PinchImageView",
+					"Description":"Experience very good Android picture gesture control.",
+					"URL":"https://github.com/boycy815/PinchImageView"					
+				}
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				},
+				{
+					"Name_Of_Repository":"",
+					"Description":"",
+					"URL":""					
+				}
+			],
+			"Cropping":
+			[
+				{
+					"Name_Of_Repository":"cropper",
+					"Description":"Android widget for cropping and rotating an image.",
+					"URL":"https://github.com/edmodo/cropper"					
+				},
+				{
+					"Name_Of_Repository":"android-crop",
+					"Description":"Android library project for cropping images",
+					"URL":"https://github.com/jdamcd/android-crop"					
+				},
+				{
+					"Name_Of_Repository":"uCrop",
+					"Description":"Image Cropping Library for Android ",
+					"URL":"https://github.com/Yalantis/uCrop"					
+				},
+				{
+					"Name_Of_Repository":"Android-Image-Cropper",
+					"Description":"Image Cropping Library for Android, optimized for Camera / Gallery.",
+					"URL":"https://github.com/ArthurHub/Android-Image-Cropper"					
+				},
+				{
+					"Name_Of_Repository":"scissors",
+					"Description":"Android image cropping library",
+					"URL":"https://github.com/lyft/scissors"					
+				},
+				{
+					"Name_Of_Repository":"SimpleCropView",
+					"Description":"A simple image cropping library for Android.",
+					"URL":"https://github.com/IsseiAoki/SimpleCropView"					
+				},
+				{
+					"Name_Of_Repository":"android-cropimage",
+					"Description":"CropImage Activity from Gallery.apk packaged as a reusable Android library (4.0 and up).",
+					"URL":"https://github.com/lvillani/android-cropimage"					
+				},
+				{
+					"Name_Of_Repository":"CropImageView",
+					"Description":"Widget allows you crop from whatever side in an ImageView. Currently Android only supports centerCrop type of cropping",
+					"URL":"https://github.com/cesards/CropImageView"					
+				},
+				{
+					"Name_Of_Repository":"PhotoCropper",
+					"Description":"The Ultimate Approach to crop photos on android devices, especially for large size photos. This way can help you avoid OOM(OutOfMemory) exception.",
+					"URL":"https://github.com/ryanhoo/PhotoCropper"					
+				}				
+			],
+			"Blur":
+			[
+				{
+					"Name_Of_Repository":"android-stackblur",
+					"Description":"Android StackBlur is a library that can perform a blurry effect on a Bitmap based on a gradient or radius, and return the result. The library is based on the code of Mario Klingemann.",
+					"URL":"https://github.com/kikoso/android-stackblur"					
+				},
+				{
+					"Name_Of_Repository":"Blurry",
+					"Description":"Blurry is an easy blur library for Android",
+					"URL":"https://github.com/wasabeef/Blurry"					
+				},
+				{
+					"Name_Of_Repository":"BlurEffectForAndroidDesign",
+					"Description":"Sample to show how to implement blur graphical tricks",
+					"URL":"https://github.com/PomepuyN/BlurEffectForAndroidDesign"					
+				},
+				{
+					"Name_Of_Repository":"BlurView",
+					"Description":"Dynamic iOS-like blur of underlying Views for Android",
+					"URL":"https://github.com/Dimezis/BlurView"					
+				},
+				{
+					"Name_Of_Repository":"ImageBlurring",
+					"Description":"Android blurring image(bitmap) by java and jni.",
+					"URL":"https://github.com/qiujuer/ImageBlurring"					
+				},
+				{
+					"Name_Of_Repository":"RealtimeBlurView",
+					"Description":"A realtime blurring overlay for Android (like iOS UIVisualEffectView)",
+					"URL":"https://github.com/mmin18/RealtimeBlurView"					
+				},
+				{
+					"Name_Of_Repository":"BlurredView",
+					"Description":"Dynamic blur of image views for Android",
+					"URL":"https://github.com/wl9739/BlurredView"					
+				}				
+			],
+			"Filter":
+			[
+				{
+					"Name_Of_Repository":"AndroidPhotoFilters ",
+					"Description":"AndroidPhotoFilters aims to provide fast, powerful and flexible image processing instrument for creating awesome effects on any image media.",
+					"URL":"https://github.com/Zomato/AndroidPhotoFilters"					
+				},
+				{
+					"Name_Of_Repository":"ImageViewZoom",
+					"Description":"Android ImageView widget with zoom and pan capabilities",
+					"URL":"https://github.com/sephiroth74/ImageViewZoom"					
+				},
+				{
+					"Name_Of_Repository":"CameraFilter",
+					"Description":"Realtime camera filters for android.",
+					"URL":"https://github.com/nekocode/CameraFilter"					
+				},
+				{
+					"Name_Of_Repository":"ImageFilterForAndroid",
+					"Description":"Nice filter image library",
+					"URL":"https://github.com/daizhenjun/ImageFilterForAndroid"					
+				},
+				{
+					"Name_Of_Repository":"ImageEditor-Android",
+					"Description":"AndroidImageEdit Android device graphics editing open source control, support for custom map image filter image rotation image clip text texture operation",
+					"URL":"https://github.com/siwangqishiq/ImageEditor-Android"					
+				},
+				{
+					"Name_Of_Repository":"ImageTransition",
+					"Description":"A small android library to transition between a circular ImageView from one Activity to a rectangular ImageView in the launched Activity.",
+					"URL":"https://github.com/vikramkakkar/ImageTransition"					
+				}				
+			],
+			"Image Caching Library":
+			[
+				{
+					"Name_Of_Repository":"picasso",
+					"Description":"A powerful image downloading and caching library for Android",
+					"URL":"https://github.com/square/picasso"					
+				},
+				{
+					"Name_Of_Repository":"picasso-transformations",
+					"Description":"An Android transformation library providing a variety of image transformations for Picasso",
+					"URL":"https://github.com/wasabeef/picasso-transformations"					
+				},
+				{
+					"Name_Of_Repository":"PicassoFaceDetectionTransformation",
+					"Description":"An Android image transformation library providing cropping above Face Detection (Face Centering) for Picasso.",
+					"URL":"https://github.com/aryarohit07/PicassoFaceDetectionTransformation"					
+				},
+				{
+					"Name_Of_Repository":"glide",
+					"Description":"An image loading and caching library for Android focused on smooth scrolling",
+					"URL":"https://github.com/bumptech/glide"					
+				},
+				{
+					"Name_Of_Repository":"glide-transformations",
+					"Description":"An Android transformation library providing a variety of image transformations for Glide.",
+					"URL":"https://github.com/wasabeef/glide-transformations"					
+				},
+				{
+					"Name_Of_Repository":"GlidePalette",
+					"Description":"Android Lollipop Palette is now easy to use with Glide",
+					"URL":"https://github.com/florent37/GlidePalette"					
+				},
+				{
+					"Name_Of_Repository":"fresco",
+					"Description":"An Android library for managing images and the memory they use.",
+					"URL":"https://github.com/facebook/fresco"					
+				},
+				{
+					"Name_Of_Repository":"fresco-processors",
+					"Description":"An Android image processor library providing a variety of image transformations for Fresco.",
+					"URL":"https://github.com/wasabeef/fresco-processors"					
+				},
+				{
+					"Name_Of_Repository":"Android-Universal-Image-Loader",
+					"Description":"Powerful and flexible library for loading, caching and displaying images on Android.",
+					"URL":"https://github.com/nostra13/Android-Universal-Image-Loader"					
+				},
+				{
+					"Name_Of_Repository":"ion",
+					"Description":"Android Asynchronous Networking and Image Loading",
+					"URL":"https://github.com/koush/ion"					
+				},
+				{
+					"Name_Of_Repository":"android-smart-image-view",
+					"Description":"Android ImageView replacement which allows image loading from URLs or contact address book, with caching",
+					"URL":"https://github.com/loopj/android-smart-image-view"					
+				},
+				{
+					"Name_Of_Repository":"LazyList",
+					"Description":"Lazy load of images in Android",
+					"URL":"https://github.com/thest1/LazyList"					
+				},
+				{
+					"Name_Of_Repository":"UrlImageViewHelper",
+					"Description":"Android library that sets an ImageView's contents from a url. Manages image downloading, caching, and makes your coffee too.",
+					"URL":"https://github.com/koush/UrlImageViewHelper"					
+				},
+				{
+					"Name_Of_Repository":"image-loader",
+					"Description":"Library for async image loading and caching on Android",
+					"URL":"https://github.com/novoda/image-loader"					
+				},
+				{
+					"Name_Of_Repository":"motion",
+					"Description":"An Android library allowing images to exhibit a parallax effect that reacts to the device's tilt",
+					"URL":"https://github.com/nvanbenschoten/motion"					
+				}				
+			],
+			"Others":
+			[
+				{
+					"Name_Of_Repository":"android-selector-chapek",
+					"Description":"Android Studio plugin which automatically generates drawable selectors from appropriately named resources.",
+					"URL":"https://github.com/inmite/android-selector-chapek"					
+				},
+				{
+					"Name_Of_Repository":"Compressor",
+					"Description":"An android image compression library.",
+					"URL":"https://github.com/zetbaitsu/Compressor"					
+				},
+				{
+					"Name_Of_Repository":"AdvancedLuban",
+					"Description":"An Advanced Compress Image Library for Android",
+					"URL":"https://github.com/shaohui10086/AdvancedLuban"					
+				},
+				{
+					"Name_Of_Repository":"Android-Ultra-Photo-Selector",
+					"Description":"Select images from Android devices made easy :-) Start Activity PhotoSelectorActivity, this is the main entry point",
+					"URL":"https://github.com/AizazAZ/Android-Ultra-Photo-Selector"					
+				},
+				{
+					"Name_Of_Repository":"android-drawable-importer-intellij-plugin",
+					"Description":"Adds an option to IntelliJ to import drawables in different resolutions from AndroidIcons, own "drawable repos" and scale a certain image down/up to the defined resolutions.",
+					"URL":"https://github.com/winterDroid/android-drawable-importer-intellij-plugin"					
+				},
+				{
+					"Name_Of_Repository":"image-chooser-library",
+					"Description":"An Easy Image/Video Chooser Library for your Android Apps",
+					"URL":"https://github.com/coomar2841/image-chooser-library"					
+				},
+				{
+					"Name_Of_Repository":"AndroidAlbum",
+					"Description":"Simple Android Album",
+					"URL":"https://github.com/D-clock/AndroidAlbum"					
+				},
+				{
+					"Name_Of_Repository":"BGAPhotoPicker-Android",
+					"Description":"Android picture selection, preview, Jiugongge picture control, drag and drop image control",
+					"URL":"https://github.com/bingoogolapple/BGAPhotoPicker-Android"					
+				}				
+			]
+		}
+	]

@@ -1,0 +1,523 @@
+"Libraries"
+[
+	{
+		"Name_Of_Repository":"butterknife",
+		"Description":"Bind Android views and callbacks to fields and methods.",
+		"URL":"https://github.com/JakeWharton/butterknife"		
+	},
+	{
+		"Name_Of_Repository":"facebook-android-sdk",
+		"Description":"Used to integrate Android apps with Facebook Platform.https://developers.facebook.com/docs/android",
+		"URL":"https://github.com/facebook/facebook-android-sdk"		
+	},
+	{
+		"Name_Of_Repository":"AndroidSocialNetworks",
+		"Description":"Library for easy work with Facebook, Twitter, LinkedIn and Google on Android",
+		"URL":"https://github.com/antonkrasov/AndroidSocialNetworks"		
+	},
+	{
+		"Name_Of_Repository":"kickmaterial",
+		"Description":"Crowdfunding app concept for Android. Created to showcase new trends in Android development with strong focus on Material Design.",
+		"URL":"https://github.com/byoutline/kickmaterial"		
+	},
+	{
+		"Name_Of_Repository":"quickstart-android",
+		"Description":"Firebase Quickstart Samples for Android https://firebase.google.com",
+		"URL":"https://github.com/firebase/quickstart-android"		
+	},
+	{
+		"Name_Of_Repository":"FirebaseUI-Android",
+		"Description":"UI bindings for Firebase",
+		"URL":"https://github.com/firebase/FirebaseUI-Android"		
+	},
+	{
+		"Name_Of_Repository":"bubbles-for-android",
+		"Description":"Bubbles for Android is an Android library to provide chat heads capabilities on your apps. With a fast way to integrate with your development.",
+		"URL":"https://github.com/txusballesteros/bubbles-for-android"		
+	},
+	{
+		"Name_Of_Repository":"PayPal-Android-SDK",
+		"Description":"Accept PayPal and credit cards in your Android app",
+		"URL":"https://github.com/paypal/PayPal-Android-SDK"		
+	},
+	{
+		"Name_Of_Repository":"android-inapp-billing-v3",
+		"Description":"A lightweight implementation of Android In-app Billing Version 3",
+		"URL":"https://github.com/anjlab/android-inapp-billing-v3"		
+	},
+	{
+		"Name_Of_Repository":"android-checkout",
+		"Description":"Library for Android In-App Billing (Version 3)",
+		"URL":"https://github.com/serso/android-checkout"		
+	},
+	{
+		"Name_Of_Repository":"AndroidBillingLibrary",
+		"Description":"Android Market In-app Billing Library",
+		"URL":"https://github.com/robotmedia/AndroidBillingLibrary"		
+	},
+	{
+		"Name_Of_Repository":"LolliPin",
+		"Description":"A Material design Android pincode library. Supports Fingerprint.",
+		"URL":"https://github.com/OrangeGangsters/LolliPin"		
+	},
+	{
+		"Name_Of_Repository":"GiftCard-Android",
+		"Description":"Simply Implement Dribbble's popular shot",
+		"URL":"https://github.com/MartinRGB/GiftCard-Android"		
+	},
+	{
+		"Name_Of_Repository":"GiftCard",
+		"Description":"A beautiful gift Cards for android",
+		"URL":"https://github.com/ldoublem/GiftCard"		
+	},
+	{
+		"Name_Of_Repository":"android-gesture-detectors",
+		"Description":"Gesture detector framework for multitouch handling on Android, based on Android's ScaleGestureDetector.http://code.almeros.com/android-multitouch-gesture-detectors",
+		"URL":"https://github.com/Almeros/android-gesture-detectors"		
+	},
+	{
+		"Name_Of_Repository":"farebot",
+		"Description":"Read data from public transit cards using your NFC Android phone! http://codebutler.github.com/farebot",
+		"URL":"https://github.com/codebutler/farebot"		
+	},
+	{
+		"Name_Of_Repository":"bitcoin-wallet",
+		"Description":"Bitcoin Wallet app for your Android device. Standalone Bitcoin node, no centralized backend required.",
+		"URL":"https://github.com/bitcoin-wallet/bitcoin-wallet"		
+	},
+	{
+		"Name_Of_Repository":"syncthing-android",
+		"Description":"Wrapper of syncthing for Android. https://syncthing.net/",
+		"URL":"https://github.com/syncthing/syncthing-android"		
+	},
+	{
+		"Name_Of_Repository":"CastCompanionLibrary-android",
+		"Description":"CastCompanionLibrary-android is a library project to enable developers integrate Cast capabilities into their applications faster and easier.",
+		"URL":"https://github.com/googlecast/CastCompanionLibrary-android"		
+	},
+	{
+		"Name_Of_Repository":"MultiCardMenu",
+		"Description":"A multicard menu that can open and close with animation on android",
+		"URL":"https://github.com/wujingchao/MultiCardMenu"		
+	},
+	{
+		"Name_Of_Repository":"Android-ActionItemBadge",
+		"Description":"This library offers a simple method to add a small badge icon to your ActionBar-MenuItem",
+		"URL":"https://github.com/mikepenz/Android-ActionItemBadge"		
+	},
+	{
+		"Name_Of_Repository":"android-wheel",
+		"Description":"Android Wheel Picker.",
+		"URL":"https://github.com/maarek/android-wheel"		
+	},
+	{
+		"Name_Of_Repository":"astrid",
+		"Description":"Astrid: Android's #1 Task Management Application http://www.astrid.com",
+		"URL":"https://github.com/todoroo/astrid"		
+	},
+	{
+		"Name_Of_Repository":"NewPipe",
+		"Description":"A lightweight Youtube frontend for Android.",
+		"URL":"https://github.com/TeamNewPipe/NewPipe"		
+	},
+	{
+		"Name_Of_Repository":"TinyDancer",
+		"Description":"An android library for displaying fps from the choreographer and percentage of time with two or more frames dropped",
+		"URL":"https://github.com/friendlyrobotnyc/TinyDancer"		
+	},
+	{
+		"Name_Of_Repository":"TableFixHeaders",
+		"Description":"Android library that implements a table with fixed headers.",
+		"URL":"https://github.com/InQBarna/TableFixHeaders"		
+	},
+	{
+		"Name_Of_Repository":"",
+		"Description":"",
+		"URL":""		
+	},
+	{
+		"Name_Of_Repository":"sliding-deck",
+		"Description":"SlidingDeck View for Android",
+		"URL":"https://github.com/txusballesteros/sliding-deck"		
+	},
+	{
+		"Name_Of_Repository":"Steppers",
+		"Description":"Steppers view library for Android, based on Google Material design guidelines",
+		"URL":"https://github.com/drozdzynski/Steppers"		
+	},
+	{
+		"Name_Of_Repository":"Android-CircleMenu",
+		"Description":"Custom ViewGroup implementation of the circular rotation menu, support to follow the finger rotation and rapid rotation.",
+		"URL":"https://github.com/hongyangAndroid/Android-CircleMenu"		
+	},
+	{
+		"Name_Of_Repository":"android_waterfall",
+		"Description":"Android version of the waterfall layout",
+		"URL":"https://github.com/dodola/android_waterfall"		
+	},
+	{
+		"Name_Of_Repository":"flexbox-layout",
+		"Description":"Flexbox for Android",
+		"URL":"https://github.com/google/flexbox-layout"		
+	},
+	{
+		"Name_Of_Repository":"FlexLayout",
+		"Description":"A powerful Android layout view that use java expression in layout params to describe relative positions.",
+		"URL":"https://github.com/mmin18/FlexLayout"		
+	},
+	{
+		"Name_Of_Repository":"FlyoutMenus",
+		"Description":"Simple material-style flyout menus for Android. There are many flyout type menus for Android, but this one is mine.",
+		"URL":"https://github.com/ShamylZakariya/FlyoutMenus"		
+	},
+	{
+		"Name_Of_Repository":"FoldableLayout",
+		"Description":"Android widgets to implement folding animation",
+		"URL":"https://github.com/alexvasilkov/FoldableLayout"		
+	},
+	{
+		"Name_Of_Repository":"Android-PullLayout",
+		"Description":"Imitation UC weather drop-down and WeChat drop-down eyes",
+		"URL":"https://github.com/BlueMor/Android-PullLayout"		
+	},
+	{
+		"Name_Of_Repository":"ExpandableLayout",
+		"Description":"An android library that brings the expandable layout with various animation. You can include optional contents and use everywhere.",
+		"URL":"https://github.com/AAkira/ExpandableLayout"		
+	},
+	{
+		"Name_Of_Repository":"android-layout-samples",
+		"Description":"Explorations around Android custom layouts",
+		"URL":"https://github.com/lucasr/android-layout-samples"		
+	},
+	{
+		"Name_Of_Repository":"shadow-layout",
+		"Description":"Android Shadow Layout",
+		"URL":"https://github.com/dmytrodanylyk/shadow-layout"		
+	},
+	{
+		"Name_Of_Repository":"FlowLayout",
+		"Description":"Android implementation of FlowLayout. Layout arranges its children in multiple rows depending on their width.",
+		"URL":"https://github.com/blazsolar/FlowLayout"		
+	},
+	{
+		"Name_Of_Repository":"ExpandableLayout",
+		"Description":"Android layout which supports expanding and collapsing child views",
+		"URL":"https://github.com/cachapa/ExpandableLayout"		
+	},
+	{
+		"Name_Of_Repository":"Android-StickyNavLayout",
+		"Description":"An android library for navigator that stick on the top",
+		"URL":"https://github.com/hongyangAndroid/Android-StickyNavLayout"		
+	},
+	{
+		"Name_Of_Repository":"seismic",
+		"Description":"Android device shake detection.",
+		"URL":"https://github.com/square/seismic"		
+	},
+	{
+		"Name_Of_Repository":"range-bar",
+		"Description":"Android widget for selecting a range of values.",
+		"URL":"https://github.com/edmodo/range-bar"		
+	},
+	{
+		"Name_Of_Repository":"PaperShredder",
+		"Description":"a PaperShredder view for android",
+		"URL":"https://github.com/ldoublem/PaperShredder"		
+	},
+	{
+		"Name_Of_Repository":"WeatherLib ",
+		"Description":"Android Weather Library: android weather lib to develop weather based app fast and easily.http://survivingwithandroid.github.io/WeatherLib/",
+		"URL":"https://github.com/survivingwithandroid/WeatherLib"		
+	},
+	{
+		"Name_Of_Repository":"UndoBar",
+		"Description":"Android Library that implements Snackbars (former known as Undobar) from Google's Material Design documentation. http://soarcn.github.io/UndoBar",
+		"URL":"https://github.com/soarcn/UndoBar"		
+	},
+	{
+		"Name_Of_Repository":"Android-UndoBar",
+		"Description":"[DEPRECATED] An implementation of Android's Undo Bar as seen in Google's Gmail app.",
+		"URL":"https://github.com/jenzz/Android-UndoBar"		
+	},
+	{
+		"Name_Of_Repository":"TinyPinyin",
+		"Description":"Fast and low memory usage of Chinese to Pinyin library for Java and Android.",
+		"URL":"https://github.com/promeG/TinyPinyin"		
+	},
+	{
+		"Name_Of_Repository":"FancyCoverFlow",
+		"Description":"A cool Open Source CoverFlow view for Android with several fancy effects. http://davidschreiber.github.io/FancyCoverFlow/",
+		"URL":"https://github.com/davidschreiber/FancyCoverFlow"		
+	},
+	{
+		"Name_Of_Repository":"android-signaturepad",
+		"Description":"A custom Android View for drawing smooth signatures",
+		"URL":"https://github.com/gcacace/android-signaturepad"		
+	},
+	{
+		"Name_Of_Repository":"santa-tracker-android",
+		"Description":"Google Santa Tracker app for Android is an educational and entertaining tradition that brings joy to millions of children (and children at heart) across the world over the December holiday period.",
+		"URL":"https://github.com/google/santa-tracker-android"		
+	},
+	{
+		"Name_Of_Repository":"CircularFloatingActionMenu",
+		"Description":"an animated circular menu for Android",
+		"URL":"https://github.com/oguzbilgener/CircularFloatingActionMenu"		
+	},
+	{
+		"Name_Of_Repository":"Side-Menu.Android",
+		"Description":"Side menu with some categories to choose. https://yalantis.com"
+		"URL":"https://github.com/Yalantis/Side-Menu.Android"		
+	},
+	{
+		"Name_Of_Repository":"BoomMenu",
+		"Description":"A menu which can ... BOOM! - Android",
+		"URL":"https://github.com/Nightonke/BoomMenu"		
+	},
+	{
+		"Name_Of_Repository":"SlidingMenu",
+		"Description":"An Android library that allows you to easily create applications with slide-in menus. You may use it in your Android apps provided that you cite this project and include the license in your app. Thanks!",
+		"URL":"https://github.com/jfeinstein10/SlidingMenu"		
+	},
+	{
+		"Name_Of_Repository":"AndroidSlidingUpPanel",
+		"Description":"This library provides a simple way to add a draggable sliding up panel (popularized by Google Music and Google Maps) to your Android application. Brought to you by Umano. http://umano.me",
+		"URL":"https://github.com/umano/AndroidSlidingUpPanel"		
+	},
+	{
+		"Name_Of_Repository":"android-satellite-menu",
+		"Description":"Android Satellite Menu",
+		"URL":"https://github.com/siyamed/android-satellite-menu"		
+	},
+	{
+		"Name_Of_Repository":"Android-IMSI-Catcher-Detector",
+		"Description":"AIMSICD • Fight IMSI-Catcher, StingRay and silent SMS! ",
+		"URL":"https://github.com/CellularPrivacy/Android-IMSI-Catcher-Detector"		
+	},
+	{
+		"Name_Of_Repository":"qksms",
+		"Description":"The most beautiful SMS messenger app for Android",
+		"URL":"https://github.com/moezbhatti/qksms"		
+	},
+	{
+		"Name_Of_Repository":"sms-backup-plus",
+		"Description":"Backup Android SMS, MMS and call log to Gmail / Gcal / IMAP",
+		"URL":"https://github.com/jberkel/sms-backup-plus"		
+	},
+	{
+		"Name_Of_Repository":"android-vision",
+		"Description":"Sample code for the Android Mobile Vision API. https://developers.google.com/vision/",
+		"URL":"https://github.com/googlesamples/android-vision"		
+	},
+	{
+		"Name_Of_Repository":"ActivityRouter",
+		"Description":"Router activities and methods with url for android",
+		"URL":"https://github.com/mzule/ActivityRouter"		
+	},
+	{
+		"Name_Of_Repository":"Amigo",
+		"Description":"A hotfix library for Android platform, and not just this...",
+		"URL":"https://github.com/eleme/Amigo"		
+	},
+	{
+		"Name_Of_Repository":"anode",
+		"Description":"Android framework for node.js applications",
+		"URL":"https://github.com/paddybyers/anode"		
+	},
+	{
+		"Name_Of_Repository":"lightcycle",
+		"Description":"LightCycle lets self-contained classes respond to Android’s lifecycle events http://soundcloud.github.io/lightcycle/",
+		"URL":"https://github.com/soundcloud/lightcycle"		
+	},
+	{
+		"Name_Of_Repository":"android-upload-service",
+		"Description":"Easily upload files (FTP / Multipart / Binary) in the background with progress indication notification",
+		"URL":"https://github.com/gotev/android-upload-service"		
+	},
+	{
+		"Name_Of_Repository":"MultiThreadDownloader",
+		"Description":"Light weight and simple Multi-Thread Downloader for Android",
+		"URL":"https://github.com/AigeStudio/MultiThreadDownloader"		
+	},
+	{
+		"Name_Of_Repository":"Android-Download-Manager-Pro",
+		"Description":"Android/Java download manager library help you to download files in parallel mechanism in some chunks.",
+		"URL":"https://github.com/majidgolshadi/Android-Download-Manager-Pro"		
+	},
+	{
+		"Name_Of_Repository":"ThinDownloadManager",
+		"Description":"To download files and to avoid using DOWNLOAD_WITHOUT_NOTIFICATION permission if you are using Android's DownloadManager in your apps.",
+		"URL":"https://github.com/smanikandan14/ThinDownloadManager"		
+	},
+	{
+		"Name_Of_Repository":"LingDong2.0",
+		"Description":"Face-to-face file transfer, Android-side Smart fast transfer, Andrews each other files, LAN, no network transfer files, Android, file transfer",
+		"URL":"https://github.com/zhoubowen-sky/LingDong2.0"		
+	},
+	{
+		"Name_Of_Repository":"roboguice",
+		"Description":"Google Guice on Android, version 3.0 [RETIRED]",
+		"URL":"https://github.com/roboguice/roboguice"		
+	},
+	{
+		"Name_Of_Repository":"dagger",
+		"Description":"A fast dependency injector for Android and Java. http://square.github.io/dagger/",
+		"URL":"https://github.com/square/dagger"		
+	},
+	{
+		"Name_Of_Repository":"SortableTableView",
+		"Description":"An Android library containing a simple TableView and an advanced SortableTableView providing a lot of customisation possibilities to fit all needs.",
+		"URL":"https://github.com/ISchwarz23/SortableTableView"		
+	},
+	{
+		"Name_Of_Repository":"GoodView",
+		"Description":"Android point praise + 1 effect, support for text and images",
+		"URL":"https://github.com/venshine/GoodView"		
+	},
+	{
+		"Name_Of_Repository":"android-FlipView",
+		"Description":"A small, easy to use android library for implementing flipping between views as seen in the popular Flipboard application",
+		"URL":"https://github.com/emilsjolander/android-FlipView"		
+	},
+	{
+		"Name_Of_Repository":"WheelView-Android",
+		"Description":"Selector with wheel view, applicable to selecting money or other short length values.",
+		"URL":"https://github.com/lantouzi/WheelView-Android"		
+	},
+	{
+		"Name_Of_Repository":"carouselview",
+		"Description":"A simple library to add carousel view in android app.",
+		"URL":"https://github.com/sayyam/carouselview"		
+	},
+	{
+		"Name_Of_Repository":"MultiStateView",
+		"Description":"Android View that displays different content based on its state",
+		"URL":"https://github.com/Kennyc1012/MultiStateView"		
+	},
+	{
+		"Name_Of_Repository":"CreditCardView",
+		"Description":"CreditCardView is an Android library that allows developers to create the UI which replicates an actual Credit Card.",
+		"URL":"https://github.com/vinaygaba/CreditCardView"		
+	},
+	{
+		"Name_Of_Repository":"CountdownView",
+		"Description":"Android Countdown View",
+		"URL":"https://github.com/iwgang/CountdownView"		
+	},
+	{
+		"Name_Of_Repository":"FabricView",
+		"Description":"A new canvas drawing library for Android. Aims to be the Fabric.js for Android. Supports text, images, and hand/stylus drawing input.The library has a website and API docs, check it out http://antwankakki.github.io/FabricView/",
+		"URL":"https://github.com/antwankakki/FabricView"		
+	},
+	{
+		"Name_Of_Repository":"FlycoLabelView",
+		"Description":"A Simple Android LabelView.",
+		"URL":"https://github.com/H07000223/FlycoLabelView"		
+	},
+	{
+		"Name_Of_Repository":"AndroidTagView",
+		"Description":"A TagView library for Android. Customize your own & Drag effect.",
+		"URL":"https://github.com/whilu/AndroidTagView"		
+	},
+	{
+		"Name_Of_Repository":"android-tagview",
+		"Description":"An Android TagView Widget. You can edit the tag's style, and set listener of selecting or deleting tag.",
+		"URL":"https://github.com/kaedea/android-tagview"		
+	},
+	{
+		"Name_Of_Repository":"TabBarView",
+		"Description":"An Android Library to help you create actionbar tabs like 'Capitaine train' app by Cyril Mottier",
+		"URL":"https://github.com/Mirkoddd/TabBarView"		
+	},
+	{
+		"Name_Of_Repository":"DoorSignView",
+		"Description":"Customizable, sensor-enabled, door sign custom views for Android.",
+		"URL":"https://github.com/renaudcerrato/DoorSignView"		
+	},
+	{
+		"Name_Of_Repository":"BGABadgeView-Android",
+		"Description":"Android badge control",
+		"URL":"https://github.com/bingoogolapple/BGABadgeView-Android"		
+	},
+	{
+		"Name_Of_Repository":"android-viewflow",
+		"Description":"A horizontal view scroller library for Android",
+		"URL":"https://github.com/pakerfeldt/android-viewflow"		
+	},
+	{
+		"Name_Of_Repository":"AndroidTreeView",
+		"Description":"AndroidTreeView. TreeView implementation for android",
+		"URL":"https://github.com/bmelnychuk/AndroidTreeView"		
+	},
+	{
+		"Name_Of_Repository":"MaterialShowcaseView",
+		"Description":"A Material Design themed ShowcaseView for Android",
+		"URL":"https://github.com/deano2390/MaterialShowcaseView"		
+	},
+	{
+		"Name_Of_Repository":"GridPasswordView",
+		"Description":"An android password view that looks like the pay password view in wechat app and alipay app.",
+		"URL":"https://github.com/Jungerr/GridPasswordView"		
+	},
+	{
+		"Name_Of_Repository":"passwordview",
+		"Description":"A Material Android password view that toggles password visibility via an eye icon.",
+		"URL":"https://github.com/lisawray/passwordview"		
+	},
+	{
+		"Name_Of_Repository":"StereoView",
+		"Description":"Android 3D Stereo Unlimited Rotating Container. This is a stereo view (3D) for Android.",
+		"URL":"https://github.com/ImmortalZ/StereoView"		
+	},
+	{
+		"Name_Of_Repository":"WheelView",
+		"Description":"Android Scroll to select controls",
+		"URL":"https://github.com/wangjiegulu/WheelView"		
+	},
+	{
+		"Name_Of_Repository":"WheelView",
+		"Description":"An Android Widget for selecting items that rotate on a wheel.",
+		"URL":"https://github.com/LukeDeighton/WheelView"		
+	},
+	{
+		"Name_Of_Repository":"RoundedLetterView",
+		"Description":"RoundedLetterView like the one in Android 5.0 Contacts app",
+		"URL":"https://github.com/pavlospt/RoundedLetterView"		
+	},
+	{
+		"Name_Of_Repository":"QuiltViewLibrary",
+		"Description":"Android Quilt View Library",
+		"URL":"https://github.com/jacobmoncur/QuiltViewLibrary"		
+	},
+	{
+		"Name_Of_Repository":"Timeline-View",
+		"Description":"Android Timeline View is used to display views like Tracking of shipment/order, steppers etc.",
+		"URL":"https://github.com/vipulasri/Timeline-View"		
+	},
+	{
+		"Name_Of_Repository":"TimelineView",
+		"Description":"Cute timeline view for android",
+		"URL":"https://github.com/alorma/TimelineView"		
+	},
+	{
+		"Name_Of_Repository":"FlippableStackView",
+		"Description":"An Android library introducing a stack of Views with the first item being flippable.",
+		"URL":"https://github.com/blipinsk/FlippableStackView"		
+	},
+	{
+		"Name_Of_Repository":"FogView_Library",
+		"Description":"FogView is a android library that can show fog on any layout and the fog removes when user rubs it.",
+		"URL":"https://github.com/dynamitechetan/FogView_Library"		
+	},
+	{
+		"Name_Of_Repository":"MathView",
+		"Description":"A library for displaying math formula in Android apps.",
+		"URL":"https://github.com/kexanie/MathView"		
+	},
+	{
+		"Name_Of_Repository":"SpiderWebScoreView",
+		"Description":"SpiderWebScoreView is a spider WebScoreView for Android. Android is used on a cobweb score view",
+		"URL":"https://github.com/xiaopansky/SpiderWebScoreView"		
+	}	
+]
