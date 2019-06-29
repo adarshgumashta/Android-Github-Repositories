@@ -19,7 +19,7 @@ public class PrefManager {
     private static String showaddvar = "showaddvar";
     private static String swapSwitchOnce= "swapSwitchOnce";
     private static String oneMoreAlarm= "oneMoreAlarm";
-
+    private static String TwoMoreAlarm= "TwoMoreAlarm";
 
 
     SharedPreferences pref;
@@ -73,6 +73,19 @@ public class PrefManager {
         editor.putInt(oneMoreAlarm, oneMoreAlarms);
         editor.commit();
     }
+
+
+    public int getTwoMoreAlarm() {
+        return pref.getInt(TwoMoreAlarm, LOADALARMFIRST_TIME);
+    }
+
+    public void setTwoMoreAlarm(int TwoMoreAlarms) {
+        editor = pref.edit();
+        editor.putInt(TwoMoreAlarm, TwoMoreAlarms);
+        editor.commit();
+    }
+
+
 
     public int getNotificationvariable() {
         return pref.getInt(notificationvariable, Notification_VARIABLE);

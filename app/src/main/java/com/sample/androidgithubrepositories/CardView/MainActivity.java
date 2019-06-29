@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnSugg
         Intent myIntent = new Intent(context, DownloadReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), 4*AlarmManager.INTERVAL_DAY, pendingIntent);
     }
 
 
@@ -141,11 +141,20 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnSugg
                 pref.setshow_Notification(1);
                 pref.setSwapSwitchOnce(1);
             }
+            if(pref.getTwoMoreAlarm()==1)
+            {
+                setAlarm(mContext.get());
+                pref.setOneMoreAlarm(1);
+                pref.setTwoMoreAlarm(1);
+                pref.setshow_Notification(1);
+                pref.setSwapSwitchOnce(1);
+            }
+
         }
 
         /*for newly installed app*/
         if (pref.getSetAlarmOnce() == 0) {
-            //pref.setshow_Notification(1);
+            pref.setshow_Notification(1);
             myAsyncTask mTask = new myAsyncTask(mContext);
             mTask.execute("abc", "10", "Hello world");
             pref.setSetAlarmOnce(1);

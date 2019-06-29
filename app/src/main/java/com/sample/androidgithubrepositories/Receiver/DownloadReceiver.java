@@ -65,7 +65,7 @@ public class DownloadReceiver extends BroadcastReceiver {
             Intent myIntentDailyNotificationPic = new Intent(context, DownloadReceiver.class);
             PendingIntent pendingIntentDailyNotificationPic = PendingIntent.getBroadcast(context, 0, myIntentDailyNotificationPic, PendingIntent.FLAG_CANCEL_CURRENT);
             AlarmManager alarmManagerDailyNotificationPic = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-            alarmManagerDailyNotificationPic.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntentDailyNotificationPic);
+            alarmManagerDailyNotificationPic.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(),4* AlarmManager.INTERVAL_DAY, pendingIntentDailyNotificationPic);
         }
         if (pref.getshow_Notification() == 1) {
             if (currentHour == 7) {
