@@ -38,5 +38,5 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/TextView01"
         android:layout_marginLeft="5dip"
-        android:text="@+id/TextViewDate"></TextView>
+        android:text="@+id/TextViewDate"/>
 </RelativeLayout>
