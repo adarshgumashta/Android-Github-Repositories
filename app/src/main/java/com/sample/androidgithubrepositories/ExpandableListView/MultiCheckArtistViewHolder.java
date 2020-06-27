@@ -2,7 +2,6 @@ package com.sample.androidgithubrepositories.ExpandableListView;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -29,10 +28,7 @@ public class MultiCheckArtistViewHolder extends ChildViewHolder {
         Description = itemView.findViewById(R.id.ChildRepositoryDescription);
         Url = itemView.findViewById(R.id.ChildRepositoryURL);
         likeButton = itemView.findViewById(R.id.checkBox2);
-        Typeface face = Typeface.createFromAsset(itemView.getContext().getAssets(), "fonts/Gotham.otf");
-        childCheckedTextView.setTypeface(face);
         childCheckedTextView.setTextColor(Color.BLACK);
-        Description.setTypeface(face);
         Description.setTextColor(Color.BLACK);
 
         childCheckedTextView.setOnLongClickListener(new View.OnLongClickListener() {

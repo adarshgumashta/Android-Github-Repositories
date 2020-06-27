@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+        android:textStyle="bold"
         android:textAllCaps="true"
         tools:text="Artist Name" />
 
@@ -17,26 +18,27 @@
         android:id="@+id/ChildRepositoryDescription"
         android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/list_item_multicheck_artist_name"
-        android:layout_below="@+id/list_item_multicheck_artist_name"
+        android:layout_below="@id/list_item_multicheck_artist_name"
+        android:layout_alignLeft="@id/list_item_multicheck_artist_name"
+        android:textStyle="italic"
         android:paddingBottom="25dp" />
 
     <com.like.LikeButton
         android:id="@+id/checkBox2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/ChildRepositoryDescription"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_toLeftOf="@+id/ChildRepositoryDescription"
-        app:anim_scale_factor="2"
+        app:anim_scale_factor="1"
         app:circle_end_color="@color/colorAccent"
         app:circle_start_color="@color/colorPrimary"
         app:dots_primary_color="@color/colorAccent"
         app:dots_secondary_color="@color/colorPrimary"
-        app:icon_size="25dp"
+        app:icon_size="15dp"
         app:icon_type="Heart" />
     <TextView
         android:id="@+id/ChildRepositoryURL"

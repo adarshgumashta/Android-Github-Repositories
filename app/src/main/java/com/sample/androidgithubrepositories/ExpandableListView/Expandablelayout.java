@@ -12,28 +12,28 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.material.navigation.NavigationView;
 import com.sample.androidgithubrepositories.Bookmarks.BookmarksActivity;
 import com.sample.androidgithubrepositories.CardView.MainActivity;
 import com.sample.androidgithubrepositories.Database.DBhelper;
@@ -50,7 +50,7 @@ import java.util.List;
 public class Expandablelayout extends AppCompatActivity implements SearchView.OnSuggestionListener {
 
 
-    private static HashMap<String,ArrayList<Boolean>> itemStateArray2= new HashMap<>();
+    private static HashMap<String, ArrayList<Boolean>> itemStateArray2 = new HashMap<>();
     SQLiteDatabase newDb;
     String parentTopicName = "";
     SearchView searchView;
@@ -63,9 +63,9 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
     private ActionBarDrawerToggle drawerToggle;
     private ArrayList<String> repositorytobebookmarked = new ArrayList<>();
     private AdView ExpandablelayoutView;
+    private InterstitialAd mInterstitialAd;
 
-    public static HashMap<String,ArrayList<Boolean>> getItemStateArray2()
-    {
+    public static HashMap<String, ArrayList<Boolean>> getItemStateArray2() {
         return itemStateArray2;
     }
 
@@ -89,12 +89,13 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
         nvDrawer.getMenu().findItem(R.id.nav_home).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_bookmarks).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_fileexplorer).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
-        nvDrawer.getMenu().findItem(R.id.nav_notification).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
+        //nvDrawer.getMenu().findItem(R.id.nav_notification).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_appdata).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_share).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_Rate).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_more).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_About).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
+        nvDrawer.getMenu().findItem(R.id.nav_PP).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
 
         // Setup drawer view
         setupDrawerContent(nvDrawer);
@@ -102,8 +103,8 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
         // Tie DrawerLayout events to the ActionBarToggle
         mDrawer.addDrawerListener(drawerToggle);
         pref = new PrefManager(this.getApplicationContext());
-        MenuItem switchItem = nvDrawer.getMenu().findItem(R.id.nav_notification);
-        CompoundButton switchView = (CompoundButton) MenuItemCompat.getActionView(switchItem);
+        // MenuItem switchItem = nvDrawer.getMenu().findItem(R.id.nav_notification);
+        /*CompoundButton switchView = (CompoundButton) MenuItemCompat.getActionView(switchItem);
         if (pref.getshow_Notification() == 1) {
             switchView.setChecked(true);
         }
@@ -121,12 +122,23 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
                     pref.setshow_Notification(0);
                 }
             }
-        });
+        });*/
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         adapter = new MultiCheckGenreAdapter(SetParentRepositories());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+        mInterstitialAd = new InterstitialAd(this);
+
+        // set the ad unit ID
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
+        // Load ads into Interstitial Ads
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+        });
     }
 
     private List<MultiCheckGenre> SetParentRepositories() {
@@ -152,28 +164,33 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
         return group_list;
     }
 
+    private void showInterstitial() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
+    }
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d("ClassName","Expandable Layout");
+        Log.d("ClassName", "Expandable Layout");
     }
 
     protected ArrayList<Artist> getsubtopic(String no) {
         ArrayList<Artist> artistArrayList = new ArrayList<>();
-        ArrayList<Boolean> isBooleanArrayList=new ArrayList<>();
+        ArrayList<Boolean> isBooleanArrayList = new ArrayList<>();
         Cursor childcursor = newDb.rawQuery("SELECT Name_Of_Repository,Description,URL,ISBOOKMARK FROM AndroidRepositories WHERE Sub_Topic_Name='" + no + "' and Topic_Name='" + parentTopicName + "'", null);
         if (childcursor != null && childcursor.moveToFirst()) {
             do {
-                Artist billMonroe = new Artist(childcursor.getString(childcursor.getColumnIndex("Name_Of_Repository")), childcursor.getString(childcursor.getColumnIndex("Description")), childcursor.getString(childcursor.getColumnIndex("URL")),no);
+                Artist billMonroe = new Artist(childcursor.getString(childcursor.getColumnIndex("Name_Of_Repository")), childcursor.getString(childcursor.getColumnIndex("Description")), childcursor.getString(childcursor.getColumnIndex("URL")), no);
                 artistArrayList.add(billMonroe);
-                if(childcursor.getString(childcursor.getColumnIndex("ISBOOKMARK"))!=null &&childcursor.getString(childcursor.getColumnIndex("ISBOOKMARK")).equalsIgnoreCase("Yes"))
-                isBooleanArrayList.add(true);
+                if (childcursor.getString(childcursor.getColumnIndex("ISBOOKMARK")) != null && childcursor.getString(childcursor.getColumnIndex("ISBOOKMARK")).equalsIgnoreCase("Yes"))
+                    isBooleanArrayList.add(true);
                 else
                     isBooleanArrayList.add(false);
             } while (childcursor.moveToNext());
         }
         childcursor.close();
-        itemStateArray2.put(no,isBooleanArrayList);
+        itemStateArray2.put(no, isBooleanArrayList);
         return artistArrayList;
     }
 
@@ -208,7 +225,7 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
         searchView.setSearchableInfo(
                 searchManager.getSearchableInfo(new ComponentName(this, SearchResultsActivity.class)));
         searchView.setOnSuggestionListener(this);
-        EditText searchEditText = (EditText) searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        EditText searchEditText = (EditText) searchView.findViewById(androidx.appcompat.appcompat.R.id.search_src_text);
         searchEditText.setTextColor(getResources().getColor(R.color.black));
         searchEditText.setHintTextColor(getResources().getColor(R.color.black));
 
@@ -343,8 +360,8 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
             case R.id.nav_more:
                 openPlayStore("market://search?q=pub:adarshgumashta");
                 break;
-            case R.id.nav_notification:
-                break;
+           /* case R.id.nav_notification:
+                break;*/
             case R.id.nav_Rate:
                 openPlayStore("market://details?id=com.sample.androidgithubrepositories");
                 break;
@@ -443,15 +460,22 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
         intent.setData(Uri.parse(appLink));
         startActivity(intent);
     }
+
     @Override
     public void onBackPressed() {
+        pref = new PrefManager(this);
+        pref.setShowaddvar(pref.getShowaddvar()+1);
+        final AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        if ((pref.getShowaddvar() % 7 == 0)) {
+            mInterstitialAd.loadAd(adRequest);
+        }
         finish();
         Intent intent = new Intent(Expandablelayout.this, MainActivity.class);
         startActivity(intent);
     }
 
-    private void openPrivacyPolicy()
-    {
+    private void openPrivacyPolicy() {
         String url = "https://learnsharepointforbeginners.blogspot.com/2019/04/android-repositories-for-github.html";
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));

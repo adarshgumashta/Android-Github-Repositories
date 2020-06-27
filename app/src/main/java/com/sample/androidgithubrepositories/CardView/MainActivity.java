@@ -15,6 +15,8 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
@@ -22,29 +24,29 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.view.MenuItemCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.material.navigation.NavigationView;
 import com.kobakei.ratethisapp.RateThisApp;
 import com.sample.androidgithubrepositories.Bookmarks.BookmarksActivity;
 import com.sample.androidgithubrepositories.Database.DBAdapter;
@@ -52,38 +54,20 @@ import com.sample.androidgithubrepositories.R;
 import com.sample.androidgithubrepositories.Receiver.DownloadReceiver;
 import com.sample.androidgithubrepositories.Receiver.PrefManager;
 import com.sample.androidgithubrepositories.Search.SearchResultsActivity;
-import com.sample.androidgithubrepositories.Utils;
 import com.sample.androidgithubrepositories.filemanager.FileChooser;
-import com.sample.androidgithubrepositories.onBoarding;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnSuggestionListener {
 
-    public static final String PREF_USER_FIRST_TIME = "user_first_time";
+
     /*Variables for Providing Permissions*/
     private static final int EXTERNAL_STORAGE_PERMISSION_CONSTANT = 100;
     private static final int REQUEST_PERMISSION_SETTING = 101;
-    private static final Intent[] AUTO_START_INTENTS = {
-            new Intent().setComponent(new ComponentName("com.samsung.android.lool", "com.samsung.android.sm.ui.battery.BatteryActivity")),
-            new Intent("miui.intent.action.OP_AUTO_START").addCategory(Intent.CATEGORY_DEFAULT),
-            new Intent().setComponent(new ComponentName("com.miui.securitycenter", "com.miui.permcenter.autostart.AutoStartManagementActivity")),
-            new Intent().setComponent(new ComponentName("com.letv.android.letvsafe", "com.letv.android.letvsafe.AutobootManageActivity")),
-            new Intent().setComponent(new ComponentName("com.huawei.systemmanager", "com.huawei.systemmanager.optimize.process.ProtectActivity")),
-            new Intent().setComponent(new ComponentName("com.coloros.safecenter", "com.coloros.safecenter.permission.startup.StartupAppListActivity")),
-            new Intent().setComponent(new ComponentName("com.coloros.safecenter", "com.coloros.safecenter.startupapp.StartupAppListActivity")),
-            new Intent().setComponent(new ComponentName("com.oppo.safe", "com.oppo.safe.permission.startup.StartupAppListActivity")),
-            new Intent().setComponent(new ComponentName("com.iqoo.secure", "com.iqoo.secure.ui.phoneoptimize.AddWhiteListActivity")),
-            new Intent().setComponent(new ComponentName("com.iqoo.secure", "com.iqoo.secure.ui.phoneoptimize.BgStartUpManager")),
-            new Intent().setComponent(new ComponentName("com.vivo.permissionmanager", "com.vivo.permissionmanager.activity.BgStartUpManagerActivity")),
-            new Intent().setComponent(new ComponentName("com.asus.mobilemanager", "com.asus.mobilemanager.entry.FunctionActivity")).setData(
-                    Uri.parse("mobilemanager://function/entry/AutoStart"))
-    };
     SearchView searchView;
     PrefManager pref;
     InterstitialAd mInterstitialAd;
@@ -95,12 +79,12 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnSugg
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
     private ActionBarDrawerToggle drawerToggle;
-    private boolean isUserFirstTime;
+
     private boolean sentToSettings = false;
     private SharedPreferences permissionStatus;
+    WeakReference<MainActivity> mContext;
 
-
-    public static void setAlarm(Context context) {
+    /*public static void setAlarm(Context context) {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, 7);
         cal.set(Calendar.MINUTE, 0);
@@ -110,27 +94,23 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnSugg
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), 4*AlarmManager.INTERVAL_DAY, pendingIntent);
-    }
+    }*/
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        isUserFirstTime = Boolean.valueOf(Utils.readSharedSetting(MainActivity.this, PREF_USER_FIRST_TIME, "true"));
-
-        Intent introIntent = new Intent(MainActivity.this, onBoarding.class);
-        introIntent.putExtra(PREF_USER_FIRST_TIME, isUserFirstTime);
-        if (isUserFirstTime)
-            startActivity(introIntent);
         setContentView(R.layout.activity_main);
         pref = new PrefManager(this.getApplicationContext());
         toolbar = (Toolbar) findViewById(R.id.toolbarmain);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Home");
-        final WeakReference<MainActivity> mContext;
         mContext = new WeakReference<>(MainActivity.this);
-
-        if (pref.getSetAlarmOnce() == 1) {
+        Intent myIntent = new Intent(mContext.get(), DownloadReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(mContext.get(), 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) mContext.get().getSystemService(ALARM_SERVICE);
+        alarmManager.cancel(pendingIntent);
+        /*if (pref.getSetAlarmOnce() == 1) {
             if (pref.getshow_Notification() == 0 && pref.getSwapSwitchOnce() == 0) {
                     pref.setshow_Notification(1);
                     pref.setSwapSwitchOnce(1);
@@ -153,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnSugg
 
         }
 
-        /*for newly installed app*/
+        *//*for newly installed app*//*
         if (pref.getSetAlarmOnce() == 0) {
             pref.setshow_Notification(1);
             myAsyncTask mTask = new myAsyncTask(mContext);
@@ -161,8 +141,12 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnSugg
             pref.setSetAlarmOnce(1);
             pref.setSwapSwitchOnce(1);
         }
-        /*for newly installed app*/
-
+        *//*for newly installed app*/
+        if(!doesDatabaseExists())
+        {
+            myAsyncTask mTask = new myAsyncTask(mContext);
+            mTask.execute("abc", "10", "Hello world");
+        }
 
         // Monitor launch times and interval from installation
         // Custom condition: 3 days and 5 launches
@@ -195,16 +179,17 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnSugg
         nvDrawer.getMenu().findItem(R.id.nav_home).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_bookmarks).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_fileexplorer).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
-        nvDrawer.getMenu().findItem(R.id.nav_notification).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
+        //nvDrawer.getMenu().findItem(R.id.nav_notification).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_appdata).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_share).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_Rate).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_more).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_About).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
+        nvDrawer.getMenu().findItem(R.id.nav_PP).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
 
         nvDrawer.setCheckedItem(R.id.nav_home);
-        MenuItem switchItem = nvDrawer.getMenu().findItem(R.id.nav_notification);
-        CompoundButton switchView = (CompoundButton) MenuItemCompat.getActionView(switchItem);
+        //MenuItem switchItem = nvDrawer.getMenu().findItem(R.id.nav_notification);
+        /*CompoundButton switchView = (CompoundButton) MenuItemCompat.getActionView(switchItem);
         if (pref.getshow_Notification() == 1) {
             switchView.setChecked(true);
         }
@@ -221,7 +206,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnSugg
                     pref.setshow_Notification(0);
                 }
             }
-        });
+        });*/
         // Setup drawer view
         setupDrawerContent(nvDrawer);
         drawerToggle = setupDrawerToggle();
@@ -475,7 +460,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnSugg
         final SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(new ComponentName(this, SearchResultsActivity.class)));
         searchView.setOnSuggestionListener(this);
-        EditText searchEditText = (EditText) searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        EditText searchEditText = (EditText) searchView.findViewById(androidx.appcompat.appcompat.R.id.search_src_text);
         searchEditText.setTextColor(getResources().getColor(R.color.black));
         searchEditText.setHintTextColor(getResources().getColor(R.color.black));
         //  searchView.setIconifiedByDefault(false);
@@ -571,8 +556,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnSugg
             case R.id.nav_more:
                 openPlayStore("market://search?q=pub:adarshgumashta");
                 break;
-            case R.id.nav_notification:
-                break;
+            /*case R.id.nav_notification:
+                break;*/
             case R.id.nav_Rate:
                 openPlayStore("market://details?id=com.sample.androidgithubrepositories");
                 break;
@@ -680,70 +665,15 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnSugg
         startActivity(i);
     }
 
-    public static class myAsyncTask extends AsyncTask<String, Integer, String> {
-        String mTAG = "myAsyncTask";
-        ProgressDialog progDailog;
-        private WeakReference<MainActivity> mContext;
-
-        public myAsyncTask(WeakReference<MainActivity> context) {
-            mContext = context;
+    private boolean doesDatabaseExists() {
+        SQLiteDatabase checkDB = null;
+        try {
+            checkDB = SQLiteDatabase.openDatabase(mContext.get().getDatabasePath("GitHubRepositories.DB").getPath(), null,SQLiteDatabase.OPEN_READONLY);
+            checkDB.close();
+        } catch (SQLiteException e) {
+            // database doesn't exist yet.
         }
-
-        @Override
-        protected void onPreExecute() {
-            progDailog = new ProgressDialog(mContext.get());
-            progDailog.setMessage("Loading...");
-            progDailog.setIndeterminate(false);
-            progDailog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            progDailog.setCancelable(true);
-            progDailog.show();
-        }
-
-        @Override
-        protected String doInBackground(String... arg) {
-            try {
-                DBAdapter dbAdapter = new DBAdapter(mContext.get());
-                dbAdapter.insertData();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            String result = "";
-            return result;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            setAlarm(mContext.get());
-            if(progDailog!=null)
-            {
-                progDailog.dismiss();
-            }
-
-            try {
-                for (final Intent intent : AUTO_START_INTENTS)
-                    if (mContext.get().getPackageManager().resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY) != null) {
-                        AlertDialog.Builder alertDialog;
-                        alertDialog = new AlertDialog.Builder(mContext.get());
-                        alertDialog.setTitle("Enable Autostart?");
-                        alertDialog.setMessage("Please Enable autostart for This App to get daily notifications.");
-                        alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                mContext.get().startActivity(intent);
-                            }
-                        });
-                        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        });
-                        alertDialog.show();
-                        break;
-                    }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            Log.d(mTAG, "Inside onPostExecute");
-        }
-
+        return checkDB != null;
     }
 
     public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
@@ -779,5 +709,71 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnSugg
                 }
             }
         }
+    }
+
+    public static class myAsyncTask extends AsyncTask<String, Integer, String> {
+        String mTAG = "myAsyncTask";
+        ProgressDialog progDailog;
+        private WeakReference<MainActivity> mContext;
+
+        public myAsyncTask(WeakReference<MainActivity> context) {
+            mContext = context;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            progDailog = new ProgressDialog(mContext.get());
+            progDailog.setMessage("Loading...");
+            progDailog.setIndeterminate(false);
+            progDailog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            progDailog.setCancelable(true);
+            progDailog.show();
+        }
+
+        @Override
+        protected String doInBackground(String... arg) {
+            try {
+                DBAdapter dbAdapter = new DBAdapter(mContext.get());
+                dbAdapter.insertData();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            String result = "";
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            //setAlarm(mContext.get());
+            if(progDailog!=null)
+            {
+                progDailog.dismiss();
+            }
+
+            /*try {
+                for (final Intent intent : AUTO_START_INTENTS)
+                    if (mContext.get().getPackageManager().resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY) != null) {
+                        AlertDialog.Builder alertDialog;
+                        alertDialog = new AlertDialog.Builder(mContext.get());
+                        alertDialog.setTitle("Enable Autostart?");
+                        alertDialog.setMessage("Please Enable autostart for This App to get daily notifications.");
+                        alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                mContext.get().startActivity(intent);
+                            }
+                        });
+                        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                        alertDialog.show();
+                        break;
+                    }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }*/
+            Log.d(mTAG, "Inside onPostExecute");
+        }
+
     }
 }

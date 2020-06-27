@@ -9,7 +9,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v4.app.NotificationCompat;
+
+import androidx.core.app.NotificationCompat;
 
 import com.sample.androidgithubrepositories.Database.DBhelper;
 import com.sample.androidgithubrepositories.OpenGithubRepository.open_github_link;

@@ -20,16 +20,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -40,14 +30,24 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.CompoundButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.github.clans.fab.FloatingActionButton;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.material.navigation.NavigationView;
 import com.sample.androidgithubrepositories.Bookmarks.BookmarksActivity;
 import com.sample.androidgithubrepositories.CardView.MainActivity;
 import com.sample.androidgithubrepositories.R;
@@ -63,6 +63,7 @@ public class open_github_link extends AppCompatActivity implements SearchView.On
     SearchView searchView;
     int isInternetConnected = 1;
     String urltoopen;
+    InterstitialAd mInterstitialAd;
     boolean fromNotification = false;
     private ProgressBar mprogress;
     private SwipeRefreshLayout mySwipeRefreshLayout;
@@ -73,7 +74,7 @@ public class open_github_link extends AppCompatActivity implements SearchView.On
     private Toolbar toolbar;
     private ActionBarDrawerToggle drawerToggle;
     private AdView open_github_linkView;
-
+    AdRequest adRequestbanner;
     public static boolean readAndWriteExternalStorage(Context context) {
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(context, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
@@ -100,9 +101,8 @@ public class open_github_link extends AppCompatActivity implements SearchView.On
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(urltoopen);
         open_github_linkView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequestbanner = new AdRequest.Builder().build();
+        adRequestbanner = new AdRequest.Builder().build();
         open_github_linkView.loadAd(adRequestbanner);
-
         // Find our drawer view
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         // Find our drawer view
@@ -112,12 +112,13 @@ public class open_github_link extends AppCompatActivity implements SearchView.On
         nvDrawer.getMenu().findItem(R.id.nav_home).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_bookmarks).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_fileexplorer).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
-        nvDrawer.getMenu().findItem(R.id.nav_notification).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
+        //nvDrawer.getMenu().findItem(R.id.nav_notification).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_appdata).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_share).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_Rate).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_more).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_About).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
+        nvDrawer.getMenu().findItem(R.id.nav_PP).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
 
         // Setup drawer view
         setupDrawerContent(nvDrawer);
@@ -125,8 +126,9 @@ public class open_github_link extends AppCompatActivity implements SearchView.On
         // Tie DrawerLayout events to the ActionBarToggle
         mDrawer.addDrawerListener(drawerToggle);
         pref = new PrefManager(this.getApplicationContext());
-        MenuItem switchItem = nvDrawer.getMenu().findItem(R.id.nav_notification);
-        CompoundButton switchView = (CompoundButton) MenuItemCompat.getActionView(switchItem);
+
+        //MenuItem switchItem = nvDrawer.getMenu().findItem(R.id.nav_notification);
+        /*CompoundButton switchView = (CompoundButton) MenuItemCompat.getActionView(switchItem);
         if (pref.getshow_Notification() == 1) {
             switchView.setChecked(true);
         }
@@ -144,7 +146,7 @@ public class open_github_link extends AppCompatActivity implements SearchView.On
                     pref.setshow_Notification(0);
                 }
             }
-        });
+        });*/
         mprogress.setProgress(0);
         mprogress.setMax(100);
         mWebview.setVisibility(View.INVISIBLE);
@@ -316,6 +318,8 @@ public class open_github_link extends AppCompatActivity implements SearchView.On
         });
     }
 
+
+
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -441,8 +445,8 @@ public class open_github_link extends AppCompatActivity implements SearchView.On
             case R.id.nav_more:
                 openPlayStore("market://search?q=pub:adarshgumashta");
                 break;
-            case R.id.nav_notification:
-                break;
+           /* case R.id.nav_notification:
+                break;*/
             case R.id.nav_Rate:
                 openPlayStore("market://details?id=com.sample.androidgithubrepositories");
                 break;
@@ -549,5 +553,6 @@ public class open_github_link extends AppCompatActivity implements SearchView.On
         i.setData(Uri.parse(url));
         startActivity(i);
     }
+
 
 }

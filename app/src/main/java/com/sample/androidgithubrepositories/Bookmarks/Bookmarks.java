@@ -2,7 +2,6 @@ package com.sample.androidgithubrepositories.Bookmarks;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,9 +35,6 @@ public class Bookmarks extends ArrayAdapter<ListCollection> {
         final View rowView = inflater.inflate(R.layout.bookmarks_list, parent, false);
         final TextView tv = rowView.findViewById(R.id.textView2);
         TextView tv1 = rowView.findViewById(R.id.textView3);
-        Typeface face = Typeface.createFromAsset(context.getAssets(), "fonts/Gotham.otf");
-        tv1.setTypeface(face);
-        tv.setTypeface(face);
         tv1.setTextColor(Color.BLACK);
         tv.setTextColor(Color.BLACK);
         rowView.setTag(holder);

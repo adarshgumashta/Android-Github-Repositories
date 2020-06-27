@@ -206,6 +206,7 @@ public class DBAdapter {
                         String output = input.substring(0, 1).toUpperCase() + input.substring(1);
                         cv.put(DBhelper.Name_Of_Repository, output);
                         cv.put(DBhelper.Description, jsonObject1.get("Description").toString());
+                        Log.d(TAG, ". CustomListView JSON -"+ jsonObject1.get("Description").toString());
                         cv.put(DBhelper.URL, jsonObject1.get("URL").toString());
                         db.beginTransaction();
                         long id = db.insert(DBhelper.TABLE_NAME, null, cv);
@@ -238,6 +239,7 @@ public class DBAdapter {
                         cv1.put(DBhelper.Sub_Topic_Name, aTopicsarray);
                         cv1.put(DBhelper.Name_Of_Repository, output);
                         cv1.put(DBhelper.Description, jsonObject2.get("Description").toString());
+                        Log.d(TAG, ". Expandable JSON -"+ jsonObject2.get("Description").toString());
                         cv1.put(DBhelper.URL, jsonObject2.get("URL").toString());
                         db.beginTransaction();
                         long id = db.insert(DBhelper.TABLE_NAME, null, cv1);

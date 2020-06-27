@@ -2,7 +2,6 @@ package com.sample.androidgithubrepositories.filemanager;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,10 +51,6 @@ public class FileArrayAdapter extends ArrayAdapter<Item> {
             TextView t1 = v.findViewById(R.id.TextView01);
             TextView t2 = v.findViewById(R.id.TextView02);
             TextView t3 = v.findViewById(R.id.TextViewDate);
-            Typeface face = Typeface.createFromAsset(c.getAssets(), "fonts/Gotham.otf");
-            t1.setTypeface(face);
-            t2.setTypeface(face);
-            t3.setTypeface(face);
             t1.setTextColor(Color.BLACK);
             t2.setTextColor(Color.BLACK);
             t3.setTextColor(Color.BLACK);

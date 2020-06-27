@@ -13,31 +13,31 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.sample.androidgithubrepositories.CardView.MainActivity;
 import com.sample.androidgithubrepositories.Database.DBhelper;
+import com.sample.androidgithubrepositories.MyApplication;
 import com.sample.androidgithubrepositories.OpenGithubRepository.open_github_link;
 import com.sample.androidgithubrepositories.R;
 import com.sample.androidgithubrepositories.Receiver.PrefManager;
@@ -46,6 +46,7 @@ import com.sample.androidgithubrepositories.filemanager.FileChooser;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by Adi on 13-07-2017.
@@ -89,12 +90,13 @@ public class BookmarksActivity extends AppCompatActivity implements SearchView.O
         nvDrawer.getMenu().findItem(R.id.nav_home).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_bookmarks).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_fileexplorer).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
-        nvDrawer.getMenu().findItem(R.id.nav_notification).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
+        //nvDrawer.getMenu().findItem(R.id.nav_notification).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_appdata).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_share).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_Rate).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_more).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_About).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
+        nvDrawer.getMenu().findItem(R.id.nav_PP).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
 
         // Setup drawer view
         setupDrawerContent(nvDrawer);
@@ -103,8 +105,8 @@ public class BookmarksActivity extends AppCompatActivity implements SearchView.O
         nvDrawer.setCheckedItem(R.id.nav_bookmarks);
         mDrawer.addDrawerListener(drawerToggle);
         pref = new PrefManager(this.getApplicationContext());
-        MenuItem switchItem = nvDrawer.getMenu().findItem(R.id.nav_notification);
-        CompoundButton switchView = (CompoundButton) MenuItemCompat.getActionView(switchItem);
+        //MenuItem switchItem = nvDrawer.getMenu().findItem(R.id.nav_notification);
+        /*CompoundButton switchView = (CompoundButton) MenuItemCompat.getActionView(switchItem);
         if (pref.getshow_Notification() == 1) {
             switchView.setChecked(true);
         }
@@ -122,13 +124,20 @@ public class BookmarksActivity extends AppCompatActivity implements SearchView.O
                     pref.setshow_Notification(0);
                 }
             }
-        });
+        });*/
         Cursor c = newDb.rawQuery("SELECT Name_Of_Repository,Description,URL FROM AndroidRepositories WHERE ISBOOKMARK='YES'", null);
         if (c != null) {
             while (c.moveToNext()) {
                 BookmarksCollection item = new BookmarksCollection();
                 item.setRepository_Name(c.getString(c.getColumnIndex("Name_Of_Repository")));
-                item.setDescription(c.getString(c.getColumnIndex("Description")));
+                Map<Integer,String> kv= MyApplication.integerStringMap();
+                Map<String,Integer> getKey= MyApplication.stringIntegerMap();
+                if(kv.containsValue(c.getString(c.getColumnIndex("Description"))))
+                {
+                    Integer integer= getKey.get(c.getString(c.getColumnIndex("Description")));
+                    String heroname = getApplicationContext().getString(integer);
+                    item.setDescription(heroname);
+                }
                 item.setURL(c.getString(c.getColumnIndex("URL")));
                 results.add(item);
             }
@@ -180,7 +189,7 @@ public class BookmarksActivity extends AppCompatActivity implements SearchView.O
         searchView.setSearchableInfo(
                 searchManager.getSearchableInfo(new ComponentName(this, SearchResultsActivity.class)));
         searchView.setOnSuggestionListener(this);
-        EditText searchEditText = (EditText) searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        EditText searchEditText = (EditText) searchView.findViewById(androidx.appcompat.appcompat.R.id.search_src_text);
         searchEditText.setTextColor(getResources().getColor(R.color.black));
         searchEditText.setHintTextColor(getResources().getColor(R.color.black));
 
@@ -227,7 +236,7 @@ public class BookmarksActivity extends AppCompatActivity implements SearchView.O
             cvs.put("ISBOOKMARK", "NO"); //These Fields should be your String values of actual column names
             newDb.update("AndroidRepositories", cvs, "Name_Of_Repository='" + s + "'", null);
         }
-        Snackbar snackbar = Snackbar.make(getCurrentFocus(), String.valueOf(repositorytobebookmarked.size()) + " repositories Removed !", Snackbar.LENGTH_LONG);
+        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), String.valueOf(repositorytobebookmarked.size()) +" " +getApplicationContext().getString(R.string.Removed_from_Bookmarks) , Snackbar.LENGTH_LONG);
         TextView tv = snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
         tv.setTextColor(Color.MAGENTA);
         snackbar.show();
@@ -292,8 +301,8 @@ public class BookmarksActivity extends AppCompatActivity implements SearchView.O
             case R.id.nav_more:
                 openPlayStore("market://search?q=pub:adarshgumashta");
                 break;
-            case R.id.nav_notification:
-                break;
+            /*case R.id.nav_notification:
+                break;*/
             case R.id.nav_Rate:
                 openPlayStore("market://details?id=com.sample.androidgithubrepositories");
                 break;

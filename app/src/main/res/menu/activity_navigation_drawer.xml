@@ -1,52 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/home"
-            android:title="Home" />
+            android:icon="@drawable/ic_home"
+            android:title="@string/navigation_drawer_Home" />
         <item
             android:id="@+id/nav_bookmarks"
-            android:icon="@drawable/bookmark"
-            android:title="Bookmarks" />
+            android:icon="@drawable/ic_bookmark"
+            android:title="@string/navigation_drawer_Bookmarks" />
         <item
             android:id="@+id/nav_fileexplorer"
-            android:icon="@drawable/file_explorer"
-            android:title="File Manager" />
-        <item
+            android:icon="@drawable/ic_file_explorer"
+            android:title="@string/navigation_drawer_File_Manager" />
+        <!--<itema
             android:id="@+id/nav_notification"
             android:icon="@drawable/notifications_24"
             android:title="Repository of the Day"
-            app:actionViewClass="android.widget.Switch" />
+            app:actionViewClass="android.widget.Switch" />-->
         <item
             android:id="@+id/nav_appdata"
-            android:icon="@drawable/delete"
-            android:title="Clear App Data" />
+            android:icon="@drawable/ic_delete_nav"
+            android:title="@string/navigation_drawer_Clear_App_Data" />
     </group>
-    <item android:title="More Apps By Developer">
-        <menu>
-            <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/nav_wallistract"
-                    android:icon="@drawable/wallistract48"
-                    android:title="Wallistract-HD Wallpapers" />
-                <item
-                    android:id="@+id/nav_VDFb"
-                    android:icon="@drawable/fbvd48"
-                    android:title="Facebook Video Downloader" />
-                <item
-                    android:id="@+id/nav_VDFbPro"
-                    android:icon="@drawable/fbvd48"
-                    android:title="(Ads Free)Facebook Video Downloader Pro" />
-                <item
-                    android:id="@+id/nav_RJMS"
-                    android:icon="@drawable/rjms48"
-                    android:title="Raja Mantri Chor Sipahi" />
-            </group>
-        </menu>
-    </item>
+
 
     <item android:title="Communicate">
         <menu>
@@ -57,24 +35,47 @@
                      android:title="Buy Ad Free" />-->
                 <item
                     android:id="@+id/nav_share"
-                    android:icon="@drawable/share24"
-                    android:title="Share this App" />
+                    android:icon="@drawable/ic_share"
+                    android:title="@string/navigation_drawer_Share_this_App" />
                 <item
                     android:id="@+id/nav_Rate"
-                    android:icon="@drawable/favorite"
-                    android:title="Rate this App" />
+                    android:icon="@drawable/ic_heart"
+                    android:title="@string/navigation_drawer_Rate_App" />
                 <item
                     android:id="@+id/nav_more"
-                    android:icon="@drawable/more"
-                    android:title="More Apps" />
+                    android:icon="@drawable/ic_more"
+                    android:title="@string/navigation_drawer_More_Apps_By_Developer" />
                 <item
                     android:id="@+id/nav_About"
-                    android:icon="@drawable/info"
-                    android:title="About" />
+                    android:icon="@drawable/ic_info"
+                    android:title="@string/navigation_drawer_About" />
                 <item
                     android:id="@+id/nav_PP"
-                    android:icon="@drawable/info"
-                    android:title="Privacy Policy" />
+                    android:icon="@drawable/ic_privacy_policy"
+                    android:title="@string/navigation_drawer_Privacy_Policy" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/navigation_drawer_More_Apps_By_Developer">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_wallistract"
+                    android:icon="@drawable/wallistract48"
+                    android:title="@string/navigation_drawer_Wallistract" />
+                <item
+                    android:id="@+id/nav_VDFb"
+                    android:icon="@drawable/fbvd48"
+                    android:title="@string/navigation_drawer_Facebook" />
+                <item
+                    android:id="@+id/nav_VDFbPro"
+                    android:icon="@drawable/fbvd48"
+                    android:title="@string/navigation_drawer_Ads_Free_Facebook" />
+                <item
+                    android:id="@+id/nav_RJMS"
+                    android:icon="@drawable/rjms48"
+                    android:title="@string/navigation_drawer_Raja_Mantri_Chor_Sipahi" />
             </group>
         </menu>
     </item>

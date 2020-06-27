@@ -26,3 +26,4 @@
 
 -keep class com.crashlytics.** { *; }
 -dontwarn com.crashlytics.**
+-keep class com.codemybrainsout.onboarder.**

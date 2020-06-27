@@ -4,14 +4,13 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
-import android.graphics.Typeface;
-import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.like.LikeButton;
 import com.like.OnLikeListener;
 import com.sample.androidgithubrepositories.Database.DBhelper;
@@ -42,11 +41,9 @@ public class listitems extends ArrayAdapter<ListCollection> {
         holder.repositoryName = rowView.findViewById(R.id.textView2);
         holder.repositoryDesc  = rowView.findViewById(R.id.textView3);
         holder.bookmark = rowView.findViewById(R.id.checkBox2);
-        Typeface face = Typeface.createFromAsset(context.getAssets(), "fonts/Gotham.otf");
-        holder.repositoryDesc.setTypeface(face);
-        holder.repositoryName.setTypeface(face);
         holder.repositoryDesc.setTextColor(Color.BLACK);
         holder.repositoryName.setTextColor(Color.BLACK);
+
         rowView.setTag(holder);
         final ListCollection lc = (ListCollection) values.get(position);
         /*holder.name.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +75,7 @@ public class listitems extends ArrayAdapter<ListCollection> {
                 ContentValues cvs = new ContentValues();
                 cvs.put("ISBOOKMARK", "YES"); //These Fields should be your String values of actual column names
                 newDb.update("AndroidRepositories", cvs, "Name_Of_Repository='" + holder.repositoryName.getText().toString() + "'", null);
-                Snackbar snackbar = Snackbar.make(holder.repositoryName.getRootView(), holder.repositoryName.getText().toString() + " repository Bookmarked !", Snackbar.LENGTH_LONG);
+                Snackbar snackbar = Snackbar.make(holder.repositoryName.getRootView(), holder.repositoryName.getText().toString() +" "+ context.getString (R.string._repository_Bookmarked_), Snackbar.LENGTH_LONG);
                 TextView tv = snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
                 tv.setTextColor(Color.WHITE);
                 snackbar.getView().setBackgroundColor(Color.RED);
@@ -97,7 +94,7 @@ public class listitems extends ArrayAdapter<ListCollection> {
                 ContentValues cvs = new ContentValues();
                 cvs.put("ISBOOKMARK", "NO"); //These Fields should be your String values of actual column names
                 newDb.update("AndroidRepositories", cvs, "Name_Of_Repository='" + holder.repositoryName.getText().toString() + "'", null);
-                Snackbar snackbar = Snackbar.make(holder.repositoryName.getRootView(), holder.repositoryName.getText().toString() + " repository Removed from Bookmarks !", Snackbar.LENGTH_LONG);
+                Snackbar snackbar = Snackbar.make(holder.repositoryName.getRootView(), holder.repositoryName.getText().toString() +" "+context.getString(R.string.Removed_from_Bookmarks), Snackbar.LENGTH_LONG);
                 TextView tv = snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
                 tv.setTextColor(Color.WHITE);
                 snackbar.getView().setBackgroundColor(Color.RED);

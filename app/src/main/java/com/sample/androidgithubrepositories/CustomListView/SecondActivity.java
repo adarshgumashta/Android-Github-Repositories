@@ -13,33 +13,34 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.sample.androidgithubrepositories.Bookmarks.BookmarksActivity;
 import com.sample.androidgithubrepositories.CardView.MainActivity;
 import com.sample.androidgithubrepositories.Database.DBhelper;
 import com.sample.androidgithubrepositories.ExpandableListView.Expandablelayout;
+import com.sample.androidgithubrepositories.MyApplication;
 import com.sample.androidgithubrepositories.OpenGithubRepository.open_github_link;
 import com.sample.androidgithubrepositories.R;
 import com.sample.androidgithubrepositories.Receiver.PrefManager;
@@ -48,6 +49,7 @@ import com.sample.androidgithubrepositories.filemanager.FileChooser;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class SecondActivity extends AppCompatActivity implements SearchView.OnSuggestionListener {
     String titl;
@@ -69,6 +71,7 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
     private Toolbar toolbar;
     private ActionBarDrawerToggle drawerToggle;
     private AdView AdviewCustomListView;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,8 +79,7 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
         setContentView(R.layout.second_activity);
         pref = new PrefManager(this.getApplicationContext());
         lv = (ListView) findViewById(R.id.list_data);
-        if(getIntent().getExtras().getString("position")!=null)
-        {
+        if (getIntent().getExtras().getString("position") != null) {
             titl = getIntent().getExtras().getString("position");
         }
         textView = (TextView) findViewById(R.id.textView);
@@ -96,19 +98,33 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
         nvDrawer.getMenu().findItem(R.id.nav_home).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_bookmarks).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_fileexplorer).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
-        nvDrawer.getMenu().findItem(R.id.nav_notification).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
+        //nvDrawer.getMenu().findItem(R.id.nav_notification).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_appdata).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_share).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_Rate).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_more).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
         nvDrawer.getMenu().findItem(R.id.nav_About).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
+        nvDrawer.getMenu().findItem(R.id.nav_PP).getIcon().setColorFilter(Color.parseColor("#FFFF4081"), PorterDuff.Mode.SRC_IN);
 
         // Setup drawer view
         setupDrawerContent(nvDrawer);
         drawerToggle = setupDrawerToggle();
         // Tie DrawerLayout events to the ActionBarToggle
         mDrawer.addDrawerListener(drawerToggle);
-        MenuItem switchItem = nvDrawer.getMenu().findItem(R.id.nav_notification);
+
+        mInterstitialAd = new InterstitialAd(this);
+
+        // set the ad unit ID
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
+        // Load ads into Interstitial Ads
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+        });
+
+        /*MenuItem switchItem = nvDrawer.getMenu().findItem(R.id.nav_notification);
         CompoundButton switchView = (CompoundButton) MenuItemCompat.getActionView(switchItem);
         if (pref.getshow_Notification() == 1) {
             switchView.setChecked(true);
@@ -127,7 +143,7 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
                     pref.setshow_Notification(0);
                 }
             }
-        });
+        });*/
 
         switch (titl) {
             case "0":
@@ -245,7 +261,7 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
         searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(new ComponentName(this, SearchResultsActivity.class)));
         searchView.setOnSuggestionListener(this);
-        EditText searchEditText = (EditText) searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        EditText searchEditText = (EditText) searchView.findViewById(androidx.appcompat.appcompat.R.id.search_src_text);
         searchEditText.setTextColor(getResources().getColor(R.color.black));
         searchEditText.setHintTextColor(getResources().getColor(R.color.black));
 
@@ -295,6 +311,8 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
     }
 
     public void getInfoCustomListView(String Topic_Name_Custom) {
+
+
         getSupportActionBar().setTitle(Topic_Name_Custom);
         DBhelper dBhelper = new DBhelper(this.getApplicationContext());
         newDb = dBhelper.getWritableDatabase();
@@ -304,7 +322,13 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
             while (c.moveToNext()) {
                 ListCollection item = new ListCollection();
                 item.setRepository_Name(c.getString(c.getColumnIndex("Name_Of_Repository")));
-                item.setDescription(c.getString(c.getColumnIndex("Description")));
+                Map<Integer, String> kv = MyApplication.integerStringMap();
+                Map<String, Integer> getKey = MyApplication.stringIntegerMap();
+                if (kv.containsValue(c.getString(c.getColumnIndex("Description")))) {
+                    Integer integer = getKey.get(c.getString(c.getColumnIndex("Description")));
+                    String heroname = getString(integer);
+                    item.setDescription(heroname);
+                }
                 item.setURL(c.getString(c.getColumnIndex("URL")));
                 if (c.getString((c.getColumnIndex("ISBOOKMARK"))) != null && c.getString((c.getColumnIndex("ISBOOKMARK"))).equalsIgnoreCase("Yes")) {
                     item.setChecked(true);
@@ -483,8 +507,8 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
             case R.id.nav_more:
                 openPlayStore("market://search?q=pub:adarshgumashta");
                 break;
-            case R.id.nav_notification:
-                break;
+            /*case R.id.nav_notification:
+                break;*/
             case R.id.nav_Rate:
                 openPlayStore("market://details?id=com.sample.androidgithubrepositories");
                 break;
@@ -512,6 +536,12 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
         // Set action bar title
         // Close the navigation drawer
         mDrawer.closeDrawers();
+    }
+
+    private void showInterstitial() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
     }
 
     public void showAbout() {
@@ -584,11 +614,22 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
         startActivity(intent);
     }
 
-    private void openPrivacyPolicy()
-    {
+    private void openPrivacyPolicy() {
         String url = "https://learnsharepointforbeginners.blogspot.com/2019/04/android-repositories-for-github.html";
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         startActivity(i);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        pref = new PrefManager(this);
+        pref.setShowaddvar(pref.getShowaddvar()+1);
+        final AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        if ((pref.getShowaddvar() % 7 == 0)) {
+            mInterstitialAd.loadAd(adRequest);
+        }
     }
 }

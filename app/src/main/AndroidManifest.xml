@@ -16,11 +16,6 @@
         <meta-data android:name="google_analytics_adid_collection_enabled" android:value="false" />
         <activity android:name=".CardView.MainActivity"
             android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".CustomListView.SecondActivity"></activity>
         <activity android:name=".OpenGithubRepository.open_github_link"></activity>
@@ -57,7 +52,13 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity android:name=".Bookmarks.BookmarksActivity" />
-        <activity android:name=".onBoarding"/>
+        <activity android:name=".onBoarding">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!--<service
             android:exported="false"
             android:name=".Receiver.ScheduledJobService">

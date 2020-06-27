@@ -1,7 +1,6 @@
 package com.sample.androidgithubrepositories.ExpandableListView;
 
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.view.View;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
@@ -23,8 +22,6 @@ public class GenreViewHolder extends GroupViewHolder {
         super(itemView);
         genreName = itemView.findViewById(R.id.list_item_genre_name);
         arrow = itemView.findViewById(R.id.list_item_genre_arrow);
-        Typeface face = Typeface.createFromAsset(itemView.getContext().getAssets(), "fonts/Gotham.otf");
-        genreName.setTypeface(face);
         genreName.setTextColor(Color.BLACK);
         // icon = (ImageView) itemView.findViewById(R.id.list_item_genre_icon);
     }

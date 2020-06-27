@@ -18,6 +18,7 @@
         android:layout_alignParentTop="true"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
         android:textColor="#ea1616" />
 
     <TextView

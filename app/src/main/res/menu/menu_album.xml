@@ -7,20 +7,20 @@
         android:id="@+id/action_add_favourite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/delete_button48"
+        android:icon="@drawable/ic_delete"
         android:orderInCategory="100"
         android:title="@string/action_add_favourite"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_search"
         android:title="type and search"
-        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/action_share"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/share48dp"
+        android:icon="@drawable/ic_share_action"
         android:orderInCategory="101"
         android:title="@string/action_play_next"
         app:showAsAction="ifRoom"/>

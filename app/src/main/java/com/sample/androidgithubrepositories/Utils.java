@@ -28,6 +28,6 @@ public class Utils {
         SharedPreferences sharedPref = ctx.getSharedPreferences(PREFERENCES_FILE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(settingName, settingValue);
-        editor.apply();
+        editor.commit();
     }
 }
