@@ -189,7 +189,7 @@ public class BookmarksActivity extends AppCompatActivity implements SearchView.O
         searchView.setSearchableInfo(
                 searchManager.getSearchableInfo(new ComponentName(this, SearchResultsActivity.class)));
         searchView.setOnSuggestionListener(this);
-        EditText searchEditText = (EditText) searchView.findViewById(androidx.appcompat.appcompat.R.id.search_src_text);
+        EditText searchEditText = (EditText) searchView.findViewById(R.id.search_src_text);
         searchEditText.setTextColor(getResources().getColor(R.color.black));
         searchEditText.setHintTextColor(getResources().getColor(R.color.black));
 
@@ -237,7 +237,7 @@ public class BookmarksActivity extends AppCompatActivity implements SearchView.O
             newDb.update("AndroidRepositories", cvs, "Name_Of_Repository='" + s + "'", null);
         }
         Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), String.valueOf(repositorytobebookmarked.size()) +" " +getApplicationContext().getString(R.string.Removed_from_Bookmarks) , Snackbar.LENGTH_LONG);
-        TextView tv = snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
+        TextView tv = snackbar.getView().findViewById(R.id.snackbar_text);
         tv.setTextColor(Color.MAGENTA);
         snackbar.show();
     }

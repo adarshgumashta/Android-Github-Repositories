@@ -6,6 +6,8 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 
+import com.google.android.gms.ads.MobileAds;
+
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Locale;
@@ -36,6 +38,9 @@ public class MyApplication extends Application {
 
     public void onCreate() {
         super.onCreate();
+        MobileAds.initialize(this, initializationStatus -> {
+            // Initialization complete.
+        });
         Resources currentResources = getResources();
         AssetManager assets = currentResources.getAssets();
         DisplayMetrics metrics = currentResources.getDisplayMetrics();

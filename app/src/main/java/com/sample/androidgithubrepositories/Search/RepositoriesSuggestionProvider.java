@@ -7,7 +7,8 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;
 import android.provider.BaseColumns;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import com.sample.androidgithubrepositories.Database.DBhelper;
 

@@ -1,5 +1,6 @@
 package com.sample.androidgithubrepositories.ExpandableListView;
 
+import android.annotation.SuppressLint;
 import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -32,7 +33,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.material.navigation.NavigationView;
 import com.sample.androidgithubrepositories.Bookmarks.BookmarksActivity;
 import com.sample.androidgithubrepositories.CardView.MainActivity;
@@ -128,7 +129,7 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
         adapter = new MultiCheckGenreAdapter(SetParentRepositories());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-        mInterstitialAd = new InterstitialAd(this);
+        /*mInterstitialAd = new InterstitialAd(this);
 
         // set the ad unit ID
         mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
@@ -138,9 +139,10 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
             public void onAdLoaded() {
                 showInterstitial();
             }
-        });
+        });*/
     }
 
+    @SuppressLint("Range")
     private List<MultiCheckGenre> SetParentRepositories() {
         List<MultiCheckGenre> group_list = new ArrayList<>();
         DBhelper dBhelper = new DBhelper(this.getApplicationContext());
@@ -165,9 +167,7 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
     }
 
     private void showInterstitial() {
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        }
+
     }
     @Override
     protected void onStart() {
@@ -175,6 +175,7 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
         Log.d("ClassName", "Expandable Layout");
     }
 
+    @SuppressLint("Range")
     protected ArrayList<Artist> getsubtopic(String no) {
         ArrayList<Artist> artistArrayList = new ArrayList<>();
         ArrayList<Boolean> isBooleanArrayList = new ArrayList<>();
@@ -225,7 +226,7 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
         searchView.setSearchableInfo(
                 searchManager.getSearchableInfo(new ComponentName(this, SearchResultsActivity.class)));
         searchView.setOnSuggestionListener(this);
-        EditText searchEditText = (EditText) searchView.findViewById(androidx.appcompat.appcompat.R.id.search_src_text);
+        EditText searchEditText = (EditText) searchView.findViewById(R.id.search_src_text);
         searchEditText.setTextColor(getResources().getColor(R.color.black));
         searchEditText.setHintTextColor(getResources().getColor(R.color.black));
 
@@ -467,9 +468,7 @@ public class Expandablelayout extends AppCompatActivity implements SearchView.On
         pref.setShowaddvar(pref.getShowaddvar()+1);
         final AdRequest adRequest = new AdRequest.Builder()
                 .build();
-        if ((pref.getShowaddvar() % 7 == 0)) {
-            mInterstitialAd.loadAd(adRequest);
-        }
+
         finish();
         Intent intent = new Intent(Expandablelayout.this, MainActivity.class);
         startActivity(intent);

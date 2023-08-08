@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -45,7 +46,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.material.navigation.NavigationView;
 import com.kobakei.ratethisapp.RateThisApp;
 import com.sample.androidgithubrepositories.Bookmarks.BookmarksActivity;
@@ -460,7 +461,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnSugg
         final SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(new ComponentName(this, SearchResultsActivity.class)));
         searchView.setOnSuggestionListener(this);
-        EditText searchEditText = (EditText) searchView.findViewById(androidx.appcompat.appcompat.R.id.search_src_text);
+        EditText searchEditText = (EditText) searchView.findViewById(R.id.search_src_text);
         searchEditText.setTextColor(getResources().getColor(R.color.black));
         searchEditText.setHintTextColor(getResources().getColor(R.color.black));
         //  searchView.setIconifiedByDefault(false);

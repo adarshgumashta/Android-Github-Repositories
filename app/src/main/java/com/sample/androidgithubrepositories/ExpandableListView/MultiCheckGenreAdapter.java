@@ -85,7 +85,7 @@ public class MultiCheckGenreAdapter extends ExpandableRecyclerViewAdapter<GenreV
                 cvs.put("ISBOOKMARK", "YES"); //These Fields should be your String values of actual column names
                 newDb.update("AndroidRepositories", cvs, "Name_Of_Repository='" + holder.childCheckedTextView.getText().toString() + "'", null);
                 Snackbar snackbar = Snackbar.make(holder.childCheckedTextView.getRootView(), holder.childCheckedTextView.getText().toString() + " "+ mContext.getString (R.string._repository_Bookmarked_), Snackbar.LENGTH_LONG);
-                TextView tv = snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
+                TextView tv = snackbar.getView().findViewById(R.id.snackbar_text);
                 tv.setTextColor(Color.WHITE);
                 snackbar.getView().setBackgroundColor(Color.RED);
                 snackbar.show();
@@ -104,7 +104,7 @@ public class MultiCheckGenreAdapter extends ExpandableRecyclerViewAdapter<GenreV
                 cvs.put("ISBOOKMARK", "NO"); //These Fields should be your String values of actual column names
                 newDb.update("AndroidRepositories", cvs, "Name_Of_Repository='" + holder.childCheckedTextView.getText().toString() + "'", null);
                 Snackbar snackbar = Snackbar.make(holder.childCheckedTextView.getRootView(), holder.childCheckedTextView.getText().toString() + " "+ mContext.getString (R.string.Removed_from_Bookmarks), Snackbar.LENGTH_LONG);
-                TextView tv = snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
+                TextView tv = snackbar.getView().findViewById(R.id.snackbar_text);
                 tv.setTextColor(Color.WHITE);
                 snackbar.getView().setBackgroundColor(Color.RED);
                 snackbar.show();

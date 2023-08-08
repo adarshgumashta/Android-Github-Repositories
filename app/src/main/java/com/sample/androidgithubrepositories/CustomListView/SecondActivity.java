@@ -33,7 +33,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.sample.androidgithubrepositories.Bookmarks.BookmarksActivity;
@@ -112,17 +112,7 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
         // Tie DrawerLayout events to the ActionBarToggle
         mDrawer.addDrawerListener(drawerToggle);
 
-        mInterstitialAd = new InterstitialAd(this);
 
-        // set the ad unit ID
-        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
-        // Load ads into Interstitial Ads
-
-        mInterstitialAd.setAdListener(new AdListener() {
-            public void onAdLoaded() {
-                showInterstitial();
-            }
-        });
 
         /*MenuItem switchItem = nvDrawer.getMenu().findItem(R.id.nav_notification);
         CompoundButton switchView = (CompoundButton) MenuItemCompat.getActionView(switchItem);
@@ -261,7 +251,7 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
         searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(new ComponentName(this, SearchResultsActivity.class)));
         searchView.setOnSuggestionListener(this);
-        EditText searchEditText = (EditText) searchView.findViewById(androidx.appcompat.appcompat.R.id.search_src_text);
+        EditText searchEditText = (EditText) searchView.findViewById(R.id.search_src_text);
         searchEditText.setTextColor(getResources().getColor(R.color.black));
         searchEditText.setHintTextColor(getResources().getColor(R.color.black));
 
@@ -303,7 +293,7 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
             newDb.update("AndroidRepositories", cvs, "Name_Of_Repository='" + s + "'", null);
         }
         Snackbar snackbar = Snackbar.make(getCurrentFocus(), String.valueOf(repositorytobebookmarked.size()) + " repositories Bookmarked !", Snackbar.LENGTH_LONG);
-        TextView tv = snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);
+        TextView tv = snackbar.getView().findViewById(R.id.snackbar_text);
         tv.setTextColor(Color.MAGENTA);
         snackbar.show();
         newDb.setTransactionSuccessful();
@@ -539,9 +529,7 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
     }
 
     private void showInterstitial() {
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        }
+
     }
 
     public void showAbout() {
@@ -628,8 +616,6 @@ public class SecondActivity extends AppCompatActivity implements SearchView.OnSu
         pref.setShowaddvar(pref.getShowaddvar()+1);
         final AdRequest adRequest = new AdRequest.Builder()
                 .build();
-        if ((pref.getShowaddvar() % 7 == 0)) {
-            mInterstitialAd.loadAd(adRequest);
-        }
+
     }
 }
